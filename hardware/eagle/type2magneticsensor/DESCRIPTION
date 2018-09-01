@@ -1,0 +1,32 @@
+Simulator Type 2 Magneto-Resistive Sensor<br>
+Rev B 12/2017<br>
+Increased connector clearance<br>
+Rev C 01/2018<br>
+Correct corner radii<br>
+Add 4-way & 6-board for Seeedstudio panelization at 100mm x 100mm.<br>
+Rev D 09/2018<br>
+Add 2SS52M lead forming guide 
+
+<pre>
+MR sensor package silk screen X = +0.1
+MR sensor package pad centres X = -0.2 & -0.3
+MR sensor package drill size = 0.02362205
+Hence silk screen edge to pad hole centres:
+X = 0.1 + 0.2 = 0.3
+X = 0.1 + 0.3 = 0.4
+Half the pad hole = 0.02362205 / 2 = 0.012
+Hence silk screen edge X to nearer edge of pad holes:
+X = 0.3 - 0.012 = 0.288
+X = 0.4 - 0.012 = 0.388
+
+Bottom edge of board Y = 0
+Hence edge to silk screen guides:
+Y = 0 + 0.288 = 0.288
+Y = 0 + 0.388 = 0.388
+
+Width of package = 0.2
+Hence silk screen guide lines
+X = -0.1 & X = +0.1
+Y = +0.288 & Y = +0.388
+This allows the edge of the board to be used as a guide for forming the VR legs 
+</pre>
