@@ -29,6 +29,7 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 		  Improve CLI formatting, really disable disabled channels
 		  Abel 3.10.0, Virtual Belfry 3.5
 		  Measure debounce timer in microseconds to improve consistency
+		  First GitHub release in simulator-type2 repo.
 
 */
 
@@ -537,7 +538,7 @@ void loop() {
 				if ( debugThisChannel( i ) && isDebugFlagSet( DEBUG_SHOW_MISFIRES ) ) {
 					
 					// Grab the time of the end of the pulse (approximately) 
-					pulseEndTime[i] = timeNowMicros();
+					pulseEndTime[i] = timeNowMicros;
 					
 					Serial.print( i + 1 ); // The channel number, as 1-16
 					Serial.print(F(" "));
