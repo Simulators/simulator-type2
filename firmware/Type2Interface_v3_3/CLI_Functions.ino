@@ -1,5 +1,5 @@
 /*
-Simulator Interface v3.2 Beta
+Simulator Interface v3.3 Beta
 Serial CLI Functions
 
 Copyright 2014-2018 Andrew J Instone-Cowie.
@@ -50,10 +50,10 @@ void dumpData( void ) {
 #endif
 	
 	// How many channels are we scanning? 
-	Serial.print(F("Highest Active Channel: "));
-	Serial.println( numChannels );
-	Serial.print(F("EEPROM Highest Channel: "));
-	Serial.println( EEPROM.read( EEPROM_NUMCHANNELS ) );
+	if ( debugMode ) {
+		Serial.print(F("Highest Active Channel: "));
+		Serial.println( numChannels );
+	}
 	
 	// What are the debounce timer values? 
 	Serial.print(F("Active Debounce Timer (ms): "));
@@ -74,7 +74,7 @@ void dumpData( void ) {
 	
 	// Which channels are enabled?
 	Serial.print(F("Enabled: "));
-	printEnabledStatus( enabledChannelMask, numChannels );	
+	printEnabledStatus( enabledChannelMask, maxNumChannels );	
 	
 	// What is the current output mapping?
 	showActiveMapping();
@@ -107,7 +107,7 @@ void dumpData( void ) {
 		// printMask( debugFlagsMask, maxDebugFlags );
 		printChannelList();
 		Serial.print(F("DebugEn: "));
-		printEnabledStatus( debugChannelMask, numChannels );
+		printEnabledStatus( debugChannelMask, maxNumChannels );
 		Serial.println(F("Debug Flags Set: "));
 		printDebugFlagsSet();
 	}
@@ -141,8 +141,7 @@ void showCLI( void ) {
 	termSetFor( TERM_CLI );
 
 	// Print the first part of the CLI
-	// Serial.print(F(" : Q/#/B/G/E/S/P/R/D/"));
-	Serial.print(F(" : #/B/G/E/S/P/R/D/"));
+	Serial.print(F(" : B/G/E/S/P/R/D/"));
 
 	if ( debugMode )
 	{
@@ -187,25 +186,6 @@ void handleCLI( byte commandByte ) {
 		blinkLED( LED, 0, 1 ); //one quick
 		break;
 
-	case '#':    // #  = Set the number of the highest active channel
-		Serial.println( char( commandByte ) );
-		readval = 0; // Set the value to be read deliberately out of range.
-		do {
-			termSetFor( TERM_INPUT );
-			Serial.print(F(" -> Enter number of highest active channel [1-"));
-			Serial.print(maxNumChannels); // this is the max the hardware will support.
-			Serial.print(F("]: "));
-			termSetFor( TERM_DEFAULT );
-			readval = vtSerial.ReadLong();       // read integer
-			Serial.println("");
-		} while ( readval < 1 || readval > maxNumChannels );
-		numChannels = readval;
-		termSetFor( TERM_CONFIRM );
-		Serial.print(F("Highest Active Channel: "));
-		Serial.println( numChannels );
-		blinkLED( LED, 2, 2 );
-		break;
-		
 	case 'B':    // B  = Set the debounce timer value (ms)
 	case 'b':
 		Serial.println( char( commandByte ) );
@@ -261,25 +241,34 @@ void handleCLI( byte commandByte ) {
 			// show the enabled sensors, LSB (treble) first
 			printChannelList();
 			Serial.print(F("Enabled: "));
-			printEnabledStatus( enabledChannelMask, numChannels ); // includes a CR
+			printEnabledStatus( enabledChannelMask, maxNumChannels ); // includes a CR
 			// Prompt the user for a sensor number to toggle on or off
 			Serial.print(F(" -> Toggle channel value [1-"));
-			Serial.print( numChannels );
+			Serial.print( maxNumChannels );
 			Serial.print(F(", 0=Done]: "));
 			termSetFor( TERM_DEFAULT );
 			readval = vtSerial.ReadLong(); // read integer ( expecting 1 - 16, 0 to finish)
 			Serial.println("");
 			// Toggle the channel bit in the enable mask by XOR-ing the current value with 1
 			// (remembering that channel numbers are 1-16, bits/channels are 0-15). Max 16 bits.
-			toggleMaskBit( &enabledChannelMask, readval - 1, numChannels );
-		} while ( readval > 0 && readval <= numChannels );
+			toggleMaskBit( &enabledChannelMask, readval - 1, maxNumChannels );
+			// Disabling ALL the sensors would be silly... so prevent it
+			if( enabledChannelMask == 0 ) {
+				termSetFor( TERM_DEBUG );
+				Serial.println(F("Cannot disable ALL the sensors!"));
+				termSetFor ( TERM_DEFAULT );
+				// Toggle it back again...
+				toggleMaskBit( &enabledChannelMask, readval - 1, maxNumChannels );
+			}
+		} while ( readval > 0 && readval <= maxNumChannels );
 		// Set the enable state for all sensors
-		enableChannels( enabledChannelMask, numChannels );
+		enableChannels( enabledChannelMask, maxNumChannels );
+		numChannels = getNumChannels( enabledChannelMask );
 		// finish by showing the updated enabled sensor list
 		termSetFor( TERM_CONFIRM );
 		printChannelList();
 		Serial.print(F("Enabled: "));
-		printEnabledStatus( enabledChannelMask, numChannels ); // includes a CR
+		printEnabledStatus( enabledChannelMask, maxNumChannels ); // includes a CR
 		blinkLED( LED, 2, 6 );
 		break; 
 
@@ -316,7 +305,7 @@ void handleCLI( byte commandByte ) {
 			// Debug flags may already be set, so list them
 			printChannelList();
 			Serial.print(F("DebugEn: "));
-			printEnabledStatus( debugChannelMask, numChannels );
+			printEnabledStatus( debugChannelMask, maxNumChannels );
 			Serial.println(F("Debug Flags Set: "));
 			printDebugFlagsSet();
 			// blink the LED to indicate we got a valid command
@@ -381,23 +370,23 @@ void handleCLI( byte commandByte ) {
 				// show the current mask, LSB (treble) first
 				printChannelList();
 				Serial.print(F("DebugEn: "));
-				printEnabledStatus( debugChannelMask, numChannels ); // includes a CR
+				printEnabledStatus( debugChannelMask, maxNumChannels ); // includes a CR
 				// Prompt the user for a bell number to toggle on or off
 				Serial.print(F(" -> Toggle channel value [1-"));
-				Serial.print( numChannels );
+				Serial.print( maxNumChannels );
 				Serial.print(F(", 0=Done]: "));
 				termSetFor( TERM_DEFAULT );
 				readval = vtSerial.ReadLong(); // read integer ( expecting 1 - 16, 0 to finish)
 				Serial.println("");
 				// Toggle the channel bit in the debug mask by XOR-ing the current value it with 1
 				// (remembering that bell numbers are 1-16, bits/channels are 0-15). Max 16 bits.
-				toggleMaskBit( &debugChannelMask, readval - 1, numChannels );
-			} while ( readval > 0 && readval <= numChannels );
+				toggleMaskBit( &debugChannelMask, readval - 1, maxNumChannels );
+			} while ( readval > 0 && readval <= maxNumChannels );
 			// finish by showing the updated bell mask
 			termSetFor( TERM_DEBUG );
 			printChannelList();
 			Serial.print(F("DebugEn: "));
-			printEnabledStatus( debugChannelMask, numChannels );	  
+			printEnabledStatus( debugChannelMask, maxNumChannels );	  
 			blinkLED( LED, 2, 10 );
 		}
 		break; 
@@ -454,14 +443,14 @@ void handleCLI( byte commandByte ) {
 		digitalWrite( LED, HIGH);
 		delay(testStartDelay * 1000); //testStartDelay is in seconds.
 		// put all the channels into test mode
-		for ( i = 0; i < numChannels; i++ ) {
+		for ( i = 0; i < maxNumChannels; i++ ) {
 			channelMachineState[i] = TEST_MODE;
 		}
 		break; 
 
 	case 'R':    // R  = Remap the channel numbers to output signals
 	case 'r':
-		// prompt the user for a channel number (as 1-to-numChannels)
+		// prompt the user for a channel number (as 1-to-maxNumChannels)
 		// show the current mapped bell character for that channel number
 		// prompt for a new mapped char (check validity)
 		// update the active map for that channel & warn about duplicates
@@ -476,12 +465,12 @@ void handleCLI( byte commandByte ) {
 			showActiveMapping();
 			// Prompt the user for a sensor number to change
 			Serial.print(F(" -> Remap channel number [1-"));
-			Serial.print( numChannels );
+			Serial.print( maxNumChannels );
 			Serial.print(F(", 0=Done]: "));
 			readval = vtSerial.ReadLong(); // read integer ( expecting 1 - 16, 0 to finish)
 			Serial.println("");
 			
-			if ( readval > 0 && readval <= numChannels && bitRead( enabledChannelMask, readval - 1 ) ) {
+			if ( readval > 0 && readval <= maxNumChannels && bitRead( enabledChannelMask, readval - 1 ) ) {
 				// it's a valid sensor number 1-16, and the channel (0-15) is enabled,
 				// show the current mapping (remember readval is sensors 1-16, array is index 0-15)
 				Serial.print(F("Current Mapping: Channel "));
@@ -548,10 +537,6 @@ void showCLIHelp(void) {
 	Serial.println(F("CLI Commands:"));
 	termSetFor( TERM_DEFAULT );
 
-	// Serial.println(F(" -> [Q] - Set simulator quirks mode"));
-	Serial.print(F(" -> [#] - Set highest active channel (1->"));
-	Serial.print(maxNumChannels); //hardware maximum
-	Serial.println(F(")"));
 	Serial.println(F(" -> [B] - Set debounce timer (1ms->20ms)"));
 	Serial.println(F(" -> [G] - Set guard timer (1cs->50cs)"));
 	Serial.println(F(" -> [E] - Enable/Disable a channel"));
@@ -704,7 +689,7 @@ void enableChannels( word thisMask, int maxBits )
 // Check that the new remapping character supplied by the user is valid, by seeing if it
 // exists in the list validMappedChars[].
 
-int checkValidMappingChar( char testchar)
+int checkValidMappingChar( char testchar )
 {
 
 	//The mapped char should be listed in the array validMappedChars[]
@@ -740,7 +725,7 @@ void printChannelList( void )
 	Serial.print(F("Channel: "));
 
 	//Print the input characters for reference
-	for ( i = 0; i < numChannels; i++ ) {
+	for ( i = 0; i < maxNumChannels; i++ ) {
 		Serial.print( i + 1 ); // shown as 1-16
 		Serial.print(F(" "));
 		if ( i < 9 ) { Serial.print(F(" ")); }
@@ -767,7 +752,7 @@ void showActiveMapping( void )
 	Serial.print(F("Mapping: "));
 
 	//Print the input characters for reference
-	for ( i = 0; i < numChannels; i++ ) {
+	for ( i = 0; i < maxNumChannels; i++ ) {
 		// Hide mapping for disabled channels
 		if ( bitRead( enabledChannelMask, i ) ) {
 			Serial.print( bellStrikeChar[i] );
@@ -799,7 +784,7 @@ void showSensorInputs( void )
 	// What are the most recent sensor values?
 	Serial.print(F("Inputs : "));
 	
-	for ( i = 0; i < numChannels; i++ ) {
+	for ( i = 0; i < maxNumChannels; i++ ) {
 		// Hide mapping for disabled channels, the last value makes no sense if the
 		// pin is not even being scanned.
 		if ( bitRead( enabledChannelMask, i ) ) {
@@ -828,9 +813,9 @@ void showSensorInputs( void )
 boolean duplicateMapCheck( void )
 {
 	// Check for duplicates and warn
-	// Don't bother looking at mappings above the numChannels ceiling
-	for ( int p = 0; p < numChannels - 1; p++ ) {
-		for ( int q = p + 1; q < numChannels; q++ ) {
+	// Don't bother looking at mappings above the maxNumChannels ceiling
+	for ( int p = 0; p < maxNumChannels - 1; p++ ) {
+		for ( int q = p + 1; q < maxNumChannels; q++ ) {
 			// If p and q are enabled channels, and the mapping for p and q are the same,
 			// then flag the duplicate and bail out.
 			if ( bitRead( enabledChannelMask, p ) && bitRead( enabledChannelMask, q ) && bellStrikeChar[p] == bellStrikeChar[q] ) {
@@ -869,9 +854,48 @@ void defaultSettings( void )
 		bellStrikeChar[i] = defaultBellStrikeChar[i];
 	}
 	
-	enableChannels( enabledChannelMask, numChannels );
+	enableChannels( enabledChannelMask, maxNumChannels );
 	termSetFor( TERM_CONFIRM );
 	Serial.println(F("Defaults Set (remember to Save)"));
 	termSetFor( TERM_DEFAULT );
 	
+}
+
+
+/*
+*********************************************************************************************
+*                                Function getNumChannels()                                  *
+*********************************************************************************************
+*/
+
+// Calcuate the value of numChannels from the highest enabled sensor in the enabledChannelMask.
+// Pass the enabledChannelMask not as a pointer (unlike in toggleMaskBit), because the value in the
+// function is going to get bitshifted and therefore lost.
+int getNumChannels( word thisMask )
+{
+	// Starting value to return, decrementing counter
+	int i = 16;
+	
+	// The code below relies on there always being at least one bit set in the
+	// enabledChannelMask. This should be enforced elsewhere, but trapped here as well to
+	// stop the code looping forever.
+	if ( thisMask == 0 ) {
+		return i;
+	}
+	
+	// While the MSB of enabledChannelMask is not a 1, left shift the enabledChannelMask
+	// and decrement the potential return value. (NB a 0 bit is logical false)
+	while( ! bitRead ( thisMask, maxNumChannels - 1 ) ) {
+		// This bit wasn't set, try the next one...
+		// Shift mask left, decrement counter
+		thisMask <<= 1;
+		i--;
+	}
+
+	if ( debugMode ) {
+		Serial.print(F("getNumChannels Returned "));
+		Serial.println(i);
+	}	
+	
+	return i;	
 }

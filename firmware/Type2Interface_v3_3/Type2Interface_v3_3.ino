@@ -1,5 +1,5 @@
 /*
-Simulator Interface v3.2 Beta
+Simulator Interface v3.3 Beta
 
 Copyright 2014-2018 Andrew J Instone-Cowie.
 
@@ -30,6 +30,8 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 		  Abel 3.10.0, Virtual Belfry 3.5
 		  Measure debounce timer in microseconds to improve consistency
 		  First GitHub release in simulator-type2 repo.
+	3.3 : Simplify CLI. Remove requirement to set numChannels and save it to EEPROM,
+		  by deriving the value from enabledChannelMask in getNumChannels.
 
 */
 
@@ -74,7 +76,7 @@ VTSerial vtSerial;
 
 // Non-volatile configuration data are stored in EEPROM:
 // Location  1    : No longer used
-// Location  2    : Number of channels (sensor pins) active & to be scanned
+// Location  2    : No longer used
 // Location  3    : Debounce Timer (in ms)
 // Location  4    : Serial port speed (as an index into serialSpeeds[])
 // Location  5    : enabledChannelMask (lo byte)
@@ -85,7 +87,7 @@ VTSerial vtSerial;
 
 // Define the EEPROM locations to make the code more readable.
 // #define EEPROM_SIMULATOR_TYPE 1
-#define EEPROM_NUMCHANNELS 2
+// #define EEPROM_NUMCHANNELS 2
 #define EEPROM_DEBOUNCE_DELAY 3
 #define EEPROM_SERIAL_SPEED 4
 #define EEPROM_ENABLE_MASK_LO 5
@@ -99,7 +101,7 @@ VTSerial vtSerial;
 
 // Software version
 const int majorVersion = 3;
-const int minorVersion = 2;
+const int minorVersion = 3;
 
 // -------------------------------------------------------------------------------------------
 //                                    Core Simulator
@@ -113,7 +115,7 @@ const int maxNumChannels = 16;
 // Not scanning unused channels avoids issues with spurious signals being detected on
 // floating inputs (even with INPUT_PULLPUP). Most data structures, etc are set up for this
 // number of channels.
-int numChannels; // initialised from EEPROM in setup
+int numChannels; // initialised from enabledChannelMask after EEPROM load in setup
 
 #ifdef ARDUINO_AVR_SIMULATOR_TYPE2
 const int channelSensorPin[] = { 6, 7, 8 ,9, 10, 11, 12, 13, 14, 3, 15, 2, 16, 17, 18, 19 };
@@ -348,12 +350,15 @@ void setup() {
 
 	// Load default values from EEPROM
 	loadFromEEPROM();
+	
+	// Calculate the highest enabled channel number and set numChannels
+	numChannels = getNumChannels( enabledChannelMask );
 
 	// generic setup loop counter
 	int i;
 
 	// setup data structures for as many entries supported by the hardware, maxNumChannels,
-	// even though we are looking at numChannels in operation.
+	// even though we are scanning up to numChannels in operation.
 	for ( i = 0; i < maxNumChannels; i++ ) {
 
 		// initialize the channel digital input pins with the pullup resistors active.
@@ -384,9 +389,10 @@ void setup() {
 		
 	}
 	
-	// Set the enable state for all channels. This initializes the state machine flag for each
-	// channel. All enabled channels start by waiting for input. 
-	enableChannels( enabledChannelMask, numChannels );
+	// Set the enable state for ALL channels. This initializes the state machine flag for each
+	// channel. All enabled channels start by waiting for input. Use maxNumChannels here, as
+	// numChannels is now derived from the enabledChannelMask.
+	enableChannels( enabledChannelMask, maxNumChannels );
 	
 	// Set up the serial port. The MBI interface spec uses 2400 8N1, another speed may have
 	// been set for debugging purposes.

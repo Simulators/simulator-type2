@@ -1,5 +1,5 @@
 /*
-Simulator Interface v3.2 Beta
+Simulator Interface v3.3 Beta
 Terminal Functions Attributes
 
 Copyright 2014-2018 Andrew J Instone-Cowie.

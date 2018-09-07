@@ -1,5 +1,5 @@
 /*
-Simulator Interface v3.2 Beta
+Simulator Interface v3.3 Beta
 EEPROM Functions
 
 Copyright 2014-2018 Andrew J Instone-Cowie.
@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // Save the following EEPROM locations:
-// 	Location  EEPROM_NUMCHANNELS	: Number of highest channel active & to be scanned
 // 	Location  EEPROM_DEBOUNCE_DELAY	: Debounce Timer (in ms)
 // 	Location  EEPROM_ENABLE_MASK_LO	: enabledChannelMask (lo byte)
 // 	Location  EEPROM_ENABLE_MASK_HI	: enabledChannelMask (hi byte)
@@ -37,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Don't save the following:
 // 	Location  EEPROM_SERIAL_SPEED	: Serial port speed - Saved by the P option and requires a reset
 // 	Location  EEPROM_SIMULATOR_TYPE	: No longer used
+// 	Location  EEPROM_NUMCHANNELS	: No longer used
 
 void saveToEEPROM( void )
 {
@@ -47,12 +47,6 @@ void saveToEEPROM( void )
 
 	// Only save the byte if different from the current value, to reduce EEPROM write wear	
 
-	if ( EEPROM.read( EEPROM_NUMCHANNELS ) != byte( numChannels ) ) {
-		EEPROM.write( EEPROM_NUMCHANNELS, byte( numChannels ) ); 
-		// Save numChannels (int) to location EEPROM_NUMCHANNELS
-	}
-	Serial.println(F("Highest active channel saved to EEPROM"));
-	
 	if ( EEPROM.read( EEPROM_DEBOUNCE_DELAY ) != byte( debounceDelay ) ) {
 		EEPROM.write( EEPROM_DEBOUNCE_DELAY, byte( debounceDelay ) ); 
 		// Save debounceDelay to location EEPROM_DEBOUNCE_DELAY
@@ -103,7 +97,6 @@ void saveToEEPROM( void )
 */
 
 // Load the following EEPROM locations:
-// 	Location  EEPROM_NUMCHANNELS	: Number of highest channel active & to be scanned
 // 	Location  EEPROM_DEBOUNCE_DELAY	: Debounce Timer (in ms)
 // 	Location  EEPROM_SERIAL_SPEED	: Serial port speed (as an index into serialSpeeds[])
 // 	Location  EEPROM_ENABLE_MASK_LO	: enabledChannelMask (lo byte)
@@ -115,6 +108,7 @@ void saveToEEPROM( void )
 
 // Don't load the following:
 // 	Location  EEPROM_SIMULATOR_TYPE	: No longer used
+// 	Location  EEPROM_NUMCHANNELS	: No longer used
 
 void loadFromEEPROM( void )
 {
@@ -126,15 +120,6 @@ void loadFromEEPROM( void )
 	// flag that the EEPROM contains some out of range values, and therefore probably has
 	// not been set and saved.
 	boolean dirtyEEPROM = false;
-
-	// initialise the number of the highest active channel from EEPROM. If the value is <1 or >max, set
-	// it to the maximum (currently 16). Cast the byte value read into an int.
-	numChannels = int( EEPROM.read( EEPROM_NUMCHANNELS ) );
-	// but the EEPROM value may not be set to a sensible value! Seed a sane value.
-	if ( numChannels < 1 || numChannels > maxNumChannels ) {
-		numChannels = maxNumChannels;
-		dirtyEEPROM = true;
-	}
 
 	// initialise the debounce timer from EEPROM. If the value is <1 or >20, set it to default.
 	// Cast the byte value read into a long so we can add it to millis().
@@ -178,9 +163,10 @@ void loadFromEEPROM( void )
 			dirtyEEPROM = true;
 		}			
 	}
-	
-	// There is no point trying to sanity check these values, any 16-bit quantity is potentially valid.
-	// Only if at least one other EEPROM value is out of range do we set a default.	
+
+	// There is no point trying to sanity check these values, any 16-bit quantity is potentially valid,
+	// apart from zero (disabling all sensors is not allowed)
+	// If at least one other EEPROM value is out of range do we set a default.	
 	if ( dirtyEEPROM ) {
 		enabledChannelMask = defaultMask;
 		debugChannelMask = defaultMask;
@@ -191,6 +177,10 @@ void loadFromEEPROM( void )
 		// from the high and low bytes.
 		enabledChannelMask = word( EEPROM.read( EEPROM_ENABLE_MASK_HI ), EEPROM.read( EEPROM_ENABLE_MASK_LO ) );
 		debugChannelMask = word( EEPROM.read( EEPROM_DEBUG_MASK_HI ), EEPROM.read( EEPROM_DEBUG_MASK_LO ) ); //hi, lo
+		// if all the sensors are disabled, set it to the default.
+		if( enabledChannelMask == 0 ) {
+			enabledChannelMask = defaultMask;
+		}
 	}
 
 	// Set the default output character mappings.	
@@ -223,11 +213,6 @@ boolean checkSavedSettings( void )
 	// not been set and saved.
 	boolean unsavedSettings = false;
 
-	// Check number of channels
-	if ( numChannels != int( EEPROM.read( EEPROM_NUMCHANNELS ) ) ) {
-		unsavedSettings = true;
-	}
-	
 	// Check the debounce timer.
 	if ( debounceDelay != long( EEPROM.read( EEPROM_DEBOUNCE_DELAY ) ) ) {
 		unsavedSettings = true;
@@ -251,7 +236,7 @@ boolean checkSavedSettings( void )
 		}
 	}
 	
-	// Check the enabledSensorMask
+	// Check the enabledChannelMask
 	if ( enabledChannelMask != word( EEPROM.read( EEPROM_ENABLE_MASK_HI ), EEPROM.read( EEPROM_ENABLE_MASK_LO ) ) ) {
 		unsavedSettings = true;
 	}
@@ -294,3 +279,4 @@ void dumpEEPROMMappings( void )
 	}
 	Serial.println(""); //new line
 }
+
