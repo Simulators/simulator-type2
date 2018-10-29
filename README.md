@@ -1,12 +1,12 @@
 # The Liverpool Ringing Simulator Project - Type 2 Hardware
 
-Here you will find all the resources for building the Liverpool Ringing Simulator Project's Type 2 simulator interfaces and sensor heads, including:
+In the folders above you will find all the resources for building the Liverpool Ringing Simulator Project's Type 2 simulator interfaces and sensor heads, including:
 * Hardware & Software Manuals
 * Firmware Source Code
 * Eagle PCB Designs
 * PCB Fabrication Gerber Files
 
-You probably want to start in the docs folder...
+You probably want to start in the docs folder above...
 
 <b>The Type 2 simulator is currently under active development. All the hardware and firmware files are here and in a usable form, as is most of the draft documentation. The <i>Technical Reference Guide</i> is currently under construction.</b>
 
