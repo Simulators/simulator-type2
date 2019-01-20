@@ -2,7 +2,10 @@ Simulator Type 2 Interface Hardware<br>
 Rev B 12/2017<br>
 Added CRO pin test point TP7<br>
 Rev C 09/2018<br>
-Adjusted voltage regulator position and add lead forming guide
+Adjusted voltage regulator position and add lead forming guide<br>
+Rev D 01/2019<br>
+Adjusted C1 position to better accommodate alternative TSR-1-2450 voltage regulator<br>
+Added second serial transmit pin to data RJ45 for future use.
 
 <pre>
 Note VR library package is 90deg to VR on board
