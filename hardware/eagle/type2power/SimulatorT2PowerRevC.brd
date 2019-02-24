@@ -18,7 +18,7 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
@@ -82,7 +82,7 @@
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
-<layer number="125" name="_tNames" color="14" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="126" name="_bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="127" name="_tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="128" name="_bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -138,133 +138,24 @@
 </layers>
 <board>
 <plain>
-<hole x="3.81" y="-5.08" drill="3.2"/>
-<hole x="3.81" y="35.56" drill="3.2"/>
-<hole x="44.45" y="35.56" drill="3.2"/>
-<hole x="44.45" y="-5.08" drill="3.2"/>
-<text x="24.13" y="33.655" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
+<hole x="3.81" y="3.81" drill="3.2"/>
+<hole x="3.81" y="44.45" drill="3.2"/>
+<hole x="44.45" y="44.45" drill="3.2"/>
+<hole x="44.45" y="3.81" drill="3.2"/>
+<text x="24.13" y="42.545" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
 Power Board</text>
-<text x="26.035" y="-5.08" size="1.27" layer="21" font="vector" align="center">Rev B
-03/2018</text>
-<dimension x1="0" y1="-11.43" x2="99.06" y2="-11.43" x3="49.53" y3="-16.51" textsize="1.778" layer="47"/>
-<wire x1="0" y1="-6.35" x2="0" y2="36.83" width="0.4064" layer="20"/>
-<wire x1="0" y1="36.83" x2="2.54" y2="39.37" width="0.4064" layer="20" curve="-90"/>
-<wire x1="45.72" y1="39.37" x2="48.26" y2="36.83" width="0.4064" layer="20" curve="-90"/>
-<wire x1="48.26" y1="-6.35" x2="45.72" y2="-8.89" width="0.4064" layer="20" curve="-90"/>
-<wire x1="45.72" y1="-8.89" x2="2.54" y2="-8.89" width="0.4064" layer="20"/>
-<wire x1="2.54" y1="-8.89" x2="0" y2="-6.35" width="0.4064" layer="20" curve="-90"/>
-<text x="20.32" y="29.337" size="1.27" layer="125" align="bottom-center">FUSE</text>
-<text x="41.91" y="31.75" size="1.27" layer="125" align="bottom-center">INTERFACE</text>
-<text x="5.634990625" y="-2.06499375" size="1.27" layer="125" align="bottom-center">PC</text>
-<text x="41.91" y="10.16" size="1.3462" layer="125">POWER</text>
-<text x="29.1338" y="27.3812" size="1.27" layer="125" align="bottom-center">TP1</text>
-<text x="29.1338" y="6.9088" size="1.27" layer="125" align="bottom-center">TP2</text>
-<hole x="54.61" y="-5.08" drill="3.2"/>
-<hole x="54.61" y="35.56" drill="3.2"/>
-<hole x="95.25" y="35.56" drill="3.2"/>
-<hole x="95.25" y="-5.08" drill="3.2"/>
-<text x="74.93" y="33.655" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
-Power Board</text>
-<text x="76.835" y="-5.08" size="1.27" layer="21" font="vector" align="center">Rev B
-03/2018</text>
-<wire x1="50.8" y1="36.83" x2="53.34" y2="39.37" width="0.4064" layer="20" curve="-90"/>
-<wire x1="96.52" y1="39.37" x2="99.06" y2="36.83" width="0.4064" layer="20" curve="-90"/>
-<wire x1="99.06" y1="36.83" x2="99.06" y2="-6.35" width="0.4064" layer="20"/>
-<wire x1="99.06" y1="-6.35" x2="96.52" y2="-8.89" width="0.4064" layer="20" curve="-90"/>
-<wire x1="96.52" y1="-8.89" x2="53.34" y2="-8.89" width="0.4064" layer="20"/>
-<wire x1="53.34" y1="-8.89" x2="50.8" y2="-6.35" width="0.4064" layer="20" curve="-90"/>
-<text x="71.12" y="29.337" size="1.27" layer="125" align="bottom-center">FUSE</text>
-<text x="92.71" y="31.75" size="1.27" layer="125" align="bottom-center">INTERFACE</text>
-<text x="56.434990625" y="-2.06499375" size="1.27" layer="125" align="bottom-center">PC</text>
-<text x="92.71" y="10.16" size="1.3462" layer="125">POWER</text>
-<text x="79.9338" y="27.3812" size="1.27" layer="125" align="bottom-center">TP1</text>
-<text x="79.9338" y="6.9088" size="1.27" layer="125" align="bottom-center">TP2</text>
-<hole x="3.81" y="45.72" drill="3.2"/>
-<hole x="3.81" y="86.36" drill="3.2"/>
-<hole x="44.45" y="86.36" drill="3.2"/>
-<hole x="44.45" y="45.72" drill="3.2"/>
-<text x="24.13" y="84.455" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
-Power Board</text>
-<text x="26.035" y="45.72" size="1.27" layer="21" font="vector" align="center">Rev B
-03/2018</text>
-<wire x1="0" y1="44.45" x2="0" y2="87.63" width="0.4064" layer="20"/>
-<wire x1="0" y1="87.63" x2="2.54" y2="90.17" width="0.4064" layer="20" curve="-90"/>
-<wire x1="2.54" y1="90.17" x2="45.72" y2="90.17" width="0.4064" layer="20"/>
-<wire x1="45.72" y1="90.17" x2="48.26" y2="87.63" width="0.4064" layer="20" curve="-90"/>
-<wire x1="48.26" y1="44.45" x2="45.72" y2="41.91" width="0.4064" layer="20" curve="-90"/>
-<wire x1="2.54" y1="41.91" x2="0" y2="44.45" width="0.4064" layer="20" curve="-90"/>
-<text x="20.32" y="80.137" size="1.27" layer="125" align="bottom-center">FUSE</text>
-<text x="41.91" y="82.55" size="1.27" layer="125" align="bottom-center">INTERFACE</text>
-<text x="5.634990625" y="48.73500625" size="1.27" layer="125" align="bottom-center">PC</text>
-<text x="41.91" y="60.96" size="1.3462" layer="125">POWER</text>
-<text x="29.1338" y="78.1812" size="1.27" layer="125" align="bottom-center">TP1</text>
-<text x="29.1338" y="57.7088" size="1.27" layer="125" align="bottom-center">TP2</text>
-<hole x="54.61" y="45.72" drill="3.2"/>
-<hole x="54.61" y="86.36" drill="3.2"/>
-<hole x="95.25" y="86.36" drill="3.2"/>
-<hole x="95.25" y="45.72" drill="3.2"/>
-<text x="74.93" y="84.455" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
-Power Board</text>
-<text x="76.835" y="45.72" size="1.27" layer="21" font="vector" align="center">Rev B
-03/2018</text>
-<wire x1="50.8" y1="87.63" x2="53.34" y2="90.17" width="0.4064" layer="20" curve="-90"/>
-<wire x1="53.34" y1="90.17" x2="96.52" y2="90.17" width="0.4064" layer="20"/>
-<wire x1="96.52" y1="90.17" x2="99.06" y2="87.63" width="0.4064" layer="20" curve="-90"/>
-<wire x1="99.06" y1="87.63" x2="99.06" y2="44.45" width="0.4064" layer="20"/>
-<wire x1="99.06" y1="44.45" x2="96.52" y2="41.91" width="0.4064" layer="20" curve="-90"/>
-<wire x1="53.34" y1="41.91" x2="50.8" y2="44.45" width="0.4064" layer="20" curve="-90"/>
-<text x="71.12" y="80.137" size="1.27" layer="125" align="bottom-center">FUSE</text>
-<text x="92.71" y="82.55" size="1.27" layer="125" align="bottom-center">INTERFACE</text>
-<text x="56.434990625" y="48.73500625" size="1.27" layer="125" align="bottom-center">PC</text>
-<text x="92.71" y="60.96" size="1.3462" layer="125">POWER</text>
-<text x="79.9338" y="78.1812" size="1.27" layer="125" align="bottom-center">TP1</text>
-<text x="79.9338" y="57.7088" size="1.27" layer="125" align="bottom-center">TP2</text>
-<dimension x1="101.6" y1="-8.89" x2="101.6" y2="90.17" x3="106.68" y3="40.64" textsize="1.778" layer="47"/>
-<wire x1="2.54" y1="41.91" x2="12.7" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="12.7" y1="41.91" x2="12.7" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="12.7" y1="39.37" x2="2.54" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="45.72" y1="41.91" x2="35.56" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="35.56" y1="41.91" x2="35.56" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="35.56" y1="39.37" x2="45.72" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="33.02" y1="41.91" x2="15.24" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="15.24" y1="41.91" x2="15.24" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="15.24" y1="39.37" x2="33.02" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="33.02" y1="39.37" x2="33.02" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="53.34" y1="41.91" x2="63.5" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="63.5" y1="41.91" x2="63.5" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="63.5" y1="39.37" x2="53.34" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="96.52" y1="41.91" x2="86.36" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="86.36" y1="41.91" x2="86.36" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="86.36" y1="39.37" x2="96.52" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="66.04" y1="41.91" x2="83.82" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="83.82" y1="41.91" x2="83.82" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="83.82" y1="39.37" x2="66.04" y2="39.37" width="0.4064" layer="20"/>
-<wire x1="66.04" y1="39.37" x2="66.04" y2="41.91" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="36.83" x2="48.26" y2="26.67" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="26.67" x2="50.8" y2="26.67" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="26.67" x2="50.8" y2="36.83" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="-6.35" x2="48.26" y2="3.81" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="3.81" x2="50.8" y2="3.81" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="3.81" x2="50.8" y2="-6.35" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="24.13" x2="48.26" y2="6.35" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="6.35" x2="50.8" y2="6.35" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="6.35" x2="50.8" y2="24.13" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="24.13" x2="48.26" y2="24.13" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="87.63" x2="48.26" y2="77.47" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="77.47" x2="50.8" y2="77.47" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="77.47" x2="50.8" y2="87.63" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="44.45" x2="48.26" y2="54.61" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="54.61" x2="50.8" y2="54.61" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="54.61" x2="50.8" y2="44.45" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="74.93" x2="50.8" y2="74.93" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="74.93" x2="50.8" y2="57.15" width="0.4064" layer="20"/>
-<wire x1="50.8" y1="57.15" x2="48.26" y2="57.15" width="0.4064" layer="20"/>
-<wire x1="48.26" y1="57.15" x2="48.26" y2="74.93" width="0.4064" layer="20"/>
-<text x="49.53" y="40.64" size="1.016" layer="20" font="vector" align="center">CUT OUT</text>
-<text x="74.93" y="40.64" size="1.016" layer="20" font="vector" align="center">CUT OUT</text>
-<text x="24.13" y="40.64" size="1.016" layer="20" font="vector" align="center">CUT OUT</text>
-<text x="49.53" y="15.24" size="1.016" layer="20" font="vector" rot="R90" align="center">CUT OUT</text>
-<text x="49.53" y="66.04" size="1.016" layer="20" font="vector" rot="R90" align="center">CUT OUT</text>
+<text x="26.035" y="3.81" size="1.27" layer="21" font="vector" align="center">Rev C
+02/2019</text>
+<dimension x1="0" y1="-1.27" x2="48.26" y2="-1.27" x3="24.13" y3="-6.35" textsize="1.778" layer="47"/>
+<dimension x1="49.53" y1="48.26" x2="49.53" y2="0" x3="55.88000625" y3="24.13" textsize="1.778" layer="47"/>
+<wire x1="0" y1="2.54" x2="0" y2="45.72" width="0.4064" layer="20"/>
+<wire x1="0" y1="45.72" x2="2.54" y2="48.26" width="0.4064" layer="20" curve="-90"/>
+<wire x1="2.54" y1="48.26" x2="45.72" y2="48.26" width="0.4064" layer="20"/>
+<wire x1="45.72" y1="48.26" x2="48.26" y2="45.72" width="0.4064" layer="20" curve="-90"/>
+<wire x1="48.26" y1="45.72" x2="48.26" y2="2.54" width="0.4064" layer="20"/>
+<wire x1="48.26" y1="2.54" x2="45.72" y2="0" width="0.4064" layer="20" curve="-90"/>
+<wire x1="45.72" y1="0" x2="2.54" y2="0" width="0.4064" layer="20"/>
+<wire x1="2.54" y1="0" x2="0" y2="2.54" width="0.4064" layer="20" curve="-90"/>
 </plain>
 <libraries>
 <library name="AIC_Custom">
@@ -368,18 +259,15 @@ Cliff FC681465P</description>
 <wire x1="-6.35" y1="-0.635" x2="-1.27" y2="-0.635" width="0.127" layer="21" style="shortdash"/>
 <wire x1="-3.997959375" y1="4.50088125" x2="-3.997959375" y2="-4.50088125" width="0.127" layer="21"/>
 </package>
-<package name="STAMP_HOLES">
-<description>Perforations ("stamp holes") for panelizing multiple boards.&lt;br&gt;Gap between milled edges of fabricated board edges 0.1"</description>
-<hole x="0" y="-1.016" drill="0.5"/>
-<hole x="0.762" y="-1.016" drill="0.5"/>
-<hole x="-0.762" y="-1.016" drill="0.5"/>
-<wire x1="-1.27" y1="1.27" x2="1.27" y2="1.27" width="0.03175" layer="21"/>
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.03175" layer="21"/>
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.03175" layer="21"/>
-<wire x1="1.27" y1="-1.27" x2="1.27" y2="1.27" width="0.03175" layer="21"/>
-<hole x="-0.762" y="1.016" drill="0.5"/>
-<hole x="0" y="1.016" drill="0.5"/>
-<hole x="0.762" y="1.016" drill="0.5"/>
+<package name="CENTRE-POS-SILK">
+<description>&lt;b&gt;Centre positive barrel connector silkscreen marking&lt;/b&gt;&lt;br&gt;
+Layer 21 tPlace</description>
+<wire x1="1.346834375" y1="-1.346834375" x2="1.346834375" y2="1.346834375" width="0.3175" layer="21" curve="-270"/>
+<circle x="0" y="0" radius="0.8255" width="0" layer="21"/>
+<wire x1="0" y1="0" x2="3.81" y2="0" width="0.3175" layer="21"/>
+<wire x1="-1.905" y1="0" x2="-4.445" y2="0" width="0.3175" layer="21"/>
+<text x="3.175" y="1.27" size="1.27" layer="21" font="vector" align="center">+</text>
+<text x="-3.81" y="1.27" size="1.27" layer="21" font="vector" align="center">-</text>
 </package>
 </packages>
 </library>
@@ -693,110 +581,31 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="FUSE" library="AIC_Custom" package="MCOMP-FUSE-HOLDER-PCB" value="800mA" x="20.32" y="15.24" smashed="yes" rot="R270">
-<attribute name="NAME" x="20.32" y="29.337" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="20.32" y="0" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<element name="FUSE" library="AIC_Custom" package="MCOMP-FUSE-HOLDER-PCB" value="800mA" x="20.32" y="24.13" smashed="yes" rot="R270">
+<attribute name="NAME" x="20.32" y="38.227" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="20.32" y="8.89" size="1.27" layer="25" font="vector" align="bottom-center"/>
 </element>
-<element name="PC" library="AIC_Custom" package="MULTICOMP-DB9-FEMALE-PCB-90DEG" value="" x="-1.27" y="15.24" smashed="yes" rot="R90">
-<attribute name="NAME" x="5.635" y="-2.065" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="-4.685" y="32.33" size="1.27" layer="27" font="vector" rot="R180" align="bottom-center"/>
+<element name="PC" library="AIC_Custom" package="MULTICOMP-DB9-FEMALE-PCB-90DEG" value="" x="-1.27" y="24.13" smashed="yes" rot="R90">
+<attribute name="NAME" x="5.635" y="6.825" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="-4.685" y="41.22" size="1.27" layer="27" font="vector" rot="R180" align="bottom-center"/>
 </element>
-<element name="INTERFACE" library="AIC_Custom" package="RJ45-RJHSE-5080" value="RJ45-RJHSE-X08090DEG" x="44.45" y="22.86" smashed="yes" rot="R90">
-<attribute name="NAME" x="41.91" y="31.75" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<element name="INTERFACE" library="AIC_Custom" package="RJ45-RJHSE-5080" value="RJ45-RJHSE-X08090DEG" x="44.45" y="31.75" smashed="yes" rot="R90">
+<attribute name="NAME" x="41.91" y="40.64" size="1.27" layer="25" font="vector" align="bottom-center"/>
 </element>
-<element name="POWER" library="AIC_Custom" package="CLIFF-FC681465P-DC-JACK" value="9V DC" x="41.91" y="5.08" smashed="yes" rot="R180">
-<attribute name="NAME" x="41.91" y="10.16" size="1.3462" layer="25" font="vector"/>
-<attribute name="VALUE" x="44.45" y="-1.27" size="1.27" layer="25" font="vector" rot="R180" align="top-left"/>
+<element name="POWER" library="AIC_Custom" package="CLIFF-FC681465P-DC-JACK" value="9V DC" x="41.91" y="13.97" smashed="yes" rot="R180">
+<attribute name="NAME" x="41.91" y="19.05" size="1.3462" layer="25" font="vector"/>
+<attribute name="VALUE" x="39.37" y="2.54" size="1.27" layer="25" font="vector" rot="R180" align="top-center"/>
 </element>
-<element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="17.78" y="-5.08"/>
-<element name="TP1" library="SparkFun-Connectors" package="1X04" value="" x="29.21" y="25.4" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.1338" y="27.3812" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="26.035" y="26.67" size="1.27" layer="27" rot="R270"/>
+<element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="17.78" y="3.81"/>
+<element name="TP1" library="SparkFun-Connectors" package="1X04" value="" x="29.21" y="34.29" smashed="yes" rot="R270">
+<attribute name="NAME" x="29.1338" y="36.2712" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="26.035" y="35.56" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="TP2" library="SparkFun-Connectors" package="1X02" value="" x="29.21" y="5.08" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.1338" y="6.9088" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="26.035" y="6.35" size="1.27" layer="27" rot="R270"/>
+<element name="TP2" library="SparkFun-Connectors" package="1X02" value="" x="29.21" y="13.97" smashed="yes" rot="R270">
+<attribute name="NAME" x="29.1338" y="15.7988" size="1.27" layer="25" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="26.035" y="15.24" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="FUSE1" library="AIC_Custom" package="MCOMP-FUSE-HOLDER-PCB" value="800mA" x="71.12" y="15.24" smashed="yes" rot="R270">
-<attribute name="NAME" x="71.12" y="29.337" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="71.12" y="0" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="PC1" library="AIC_Custom" package="MULTICOMP-DB9-FEMALE-PCB-90DEG" value="" x="49.53" y="15.24" smashed="yes" rot="R90">
-<attribute name="NAME" x="56.435" y="-2.065" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="46.115" y="32.33" size="1.27" layer="27" font="vector" rot="R180" align="bottom-center"/>
-</element>
-<element name="INTERFACE1" library="AIC_Custom" package="RJ45-RJHSE-5080" value="RJ45-RJHSE-X08090DEG" x="95.25" y="22.86" smashed="yes" rot="R90">
-<attribute name="NAME" x="92.71" y="31.75" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="POWER1" library="AIC_Custom" package="CLIFF-FC681465P-DC-JACK" value="9V DC" x="92.71" y="5.08" smashed="yes" rot="R180">
-<attribute name="NAME" x="92.71" y="10.16" size="1.3462" layer="25" font="vector"/>
-<attribute name="VALUE" x="95.25" y="-1.27" size="1.27" layer="25" font="vector" rot="R180" align="top-left"/>
-</element>
-<element name="LOGO2" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="68.58" y="-5.08"/>
-<element name="TP3" library="SparkFun-Connectors" package="1X04" value="" x="80.01" y="25.4" smashed="yes" rot="R270">
-<attribute name="NAME" x="79.9338" y="27.3812" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="76.835" y="26.67" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="TP4" library="SparkFun-Connectors" package="1X02" value="" x="80.01" y="5.08" smashed="yes" rot="R270">
-<attribute name="NAME" x="79.9338" y="6.9088" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="76.835" y="6.35" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="FUSE2" library="AIC_Custom" package="MCOMP-FUSE-HOLDER-PCB" value="800mA" x="20.32" y="66.04" smashed="yes" rot="R270">
-<attribute name="NAME" x="20.32" y="80.137" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="20.32" y="50.8" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="PC2" library="AIC_Custom" package="MULTICOMP-DB9-FEMALE-PCB-90DEG" value="" x="-1.27" y="66.04" smashed="yes" rot="R90">
-<attribute name="NAME" x="5.635" y="48.735" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="-4.685" y="83.13" size="1.27" layer="27" font="vector" rot="R180" align="bottom-center"/>
-</element>
-<element name="INTERFACE2" library="AIC_Custom" package="RJ45-RJHSE-5080" value="RJ45-RJHSE-X08090DEG" x="44.45" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="41.91" y="82.55" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="POWER2" library="AIC_Custom" package="CLIFF-FC681465P-DC-JACK" value="9V DC" x="41.91" y="55.88" smashed="yes" rot="R180">
-<attribute name="NAME" x="41.91" y="60.96" size="1.3462" layer="25" font="vector"/>
-<attribute name="VALUE" x="44.45" y="49.53" size="1.27" layer="25" font="vector" rot="R180" align="top-left"/>
-</element>
-<element name="LOGO3" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="17.78" y="45.72"/>
-<element name="TP5" library="SparkFun-Connectors" package="1X04" value="" x="29.21" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.1338" y="78.1812" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="26.035" y="77.47" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="TP6" library="SparkFun-Connectors" package="1X02" value="" x="29.21" y="55.88" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.1338" y="57.7088" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="26.035" y="57.15" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="FUSE3" library="AIC_Custom" package="MCOMP-FUSE-HOLDER-PCB" value="800mA" x="71.12" y="66.04" smashed="yes" rot="R270">
-<attribute name="NAME" x="71.12" y="80.137" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="71.12" y="50.8" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="PC3" library="AIC_Custom" package="MULTICOMP-DB9-FEMALE-PCB-90DEG" value="" x="49.53" y="66.04" smashed="yes" rot="R90">
-<attribute name="NAME" x="56.435" y="48.735" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="46.115" y="83.13" size="1.27" layer="27" font="vector" rot="R180" align="bottom-center"/>
-</element>
-<element name="INTERFACE3" library="AIC_Custom" package="RJ45-RJHSE-5080" value="RJ45-RJHSE-X08090DEG" x="95.25" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="92.71" y="82.55" size="1.27" layer="25" font="vector" align="bottom-center"/>
-</element>
-<element name="POWER3" library="AIC_Custom" package="CLIFF-FC681465P-DC-JACK" value="9V DC" x="92.71" y="55.88" smashed="yes" rot="R180">
-<attribute name="NAME" x="92.71" y="60.96" size="1.3462" layer="25" font="vector"/>
-<attribute name="VALUE" x="95.25" y="49.53" size="1.27" layer="25" font="vector" rot="R180" align="top-left"/>
-</element>
-<element name="LOGO4" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="68.58" y="45.72"/>
-<element name="TP7" library="SparkFun-Connectors" package="1X04" value="" x="80.01" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="79.9338" y="78.1812" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="76.835" y="77.47" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="TP8" library="SparkFun-Connectors" package="1X02" value="" x="80.01" y="55.88" smashed="yes" rot="R270">
-<attribute name="NAME" x="79.9338" y="57.7088" size="1.27" layer="25" font="vector" align="bottom-center"/>
-<attribute name="VALUE" x="76.835" y="57.15" size="1.27" layer="27" rot="R270"/>
-</element>
-<element name="E$1" library="AIC_Custom" package="STAMP_HOLES" value="" x="49.53" y="25.4" rot="R90"/>
-<element name="E$2" library="AIC_Custom" package="STAMP_HOLES" value="" x="13.97" y="40.64"/>
-<element name="E$3" library="AIC_Custom" package="STAMP_HOLES" value="" x="34.29" y="40.64"/>
-<element name="E$4" library="AIC_Custom" package="STAMP_HOLES" value="" x="64.77" y="40.64"/>
-<element name="E$5" library="AIC_Custom" package="STAMP_HOLES" value="" x="85.09" y="40.64"/>
-<element name="E$6" library="AIC_Custom" package="STAMP_HOLES" value="" x="49.53" y="5.08" rot="R90"/>
-<element name="E$7" library="AIC_Custom" package="STAMP_HOLES" value="" x="49.53" y="55.88" rot="R90"/>
-<element name="E$8" library="AIC_Custom" package="STAMP_HOLES" value="" x="49.53" y="76.2" rot="R90"/>
+<element name="U$1" library="AIC_Custom" package="CENTRE-POS-SILK" value="" x="39.37" y="6.35"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -806,318 +615,78 @@ design rules under a new name.</description>
 <contactref element="INTERFACE" pad="3"/>
 <contactref element="TP2" pad="2"/>
 <polygon width="0.4064" layer="16">
-<vertex x="2.54" y="39.37"/>
-<vertex x="45.72" y="39.37" curve="-90"/>
-<vertex x="48.26" y="36.83"/>
-<vertex x="48.26" y="-6.35" curve="-90"/>
-<vertex x="45.72" y="-8.89"/>
-<vertex x="2.54" y="-8.89" curve="-90"/>
-<vertex x="0" y="-6.35"/>
-<vertex x="0" y="36.83" curve="-90"/>
+<vertex x="2.54" y="48.26"/>
+<vertex x="45.72" y="48.26" curve="-90"/>
+<vertex x="48.26" y="45.72"/>
+<vertex x="48.26" y="2.54" curve="-90"/>
+<vertex x="45.72" y="0"/>
+<vertex x="2.54" y="0" curve="-90"/>
+<vertex x="0" y="2.54"/>
+<vertex x="0" y="45.72" curve="-90"/>
 </polygon>
 <polygon width="0.4064" layer="1">
-<vertex x="2.54" y="39.37"/>
-<vertex x="45.72" y="39.37" curve="-90"/>
-<vertex x="48.26" y="36.83"/>
-<vertex x="48.26" y="-6.35" curve="-90"/>
-<vertex x="45.72" y="-8.89"/>
-<vertex x="2.54" y="-8.89" curve="-90"/>
-<vertex x="0" y="-6.35"/>
-<vertex x="0" y="36.83" curve="-90"/>
+<vertex x="2.54" y="48.26"/>
+<vertex x="45.72" y="48.26" curve="-90"/>
+<vertex x="48.26" y="45.72"/>
+<vertex x="48.26" y="2.54" curve="-90"/>
+<vertex x="45.72" y="0"/>
+<vertex x="2.54" y="0" curve="-90"/>
+<vertex x="0" y="2.54"/>
+<vertex x="0" y="45.72" curve="-90"/>
 </polygon>
 </signal>
 <signal name="VIN">
 <contactref element="TP2" pad="1"/>
 <contactref element="POWER" pad="1"/>
 <contactref element="FUSE" pad="2"/>
-<wire x1="29.21" y1="4.874259375" x2="29.21" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="29.21" y1="5.08" x2="35.709859375" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="20.32" y1="4.239259375" x2="21.160740625" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="21.160740625" y1="5.08" x2="29.21" y2="5.08" width="0.6096" layer="16"/>
+<wire x1="29.21" y1="13.764259375" x2="29.21" y2="13.97" width="0.6096" layer="16"/>
+<wire x1="29.21" y1="13.97" x2="35.709859375" y2="13.97" width="0.6096" layer="16"/>
+<wire x1="20.32" y1="13.129259375" x2="21.160740625" y2="13.97" width="0.6096" layer="16"/>
+<wire x1="21.160740625" y1="13.97" x2="29.21" y2="13.97" width="0.6096" layer="16"/>
 </signal>
 <signal name="RXD">
 <contactref element="PC" pad="3"/>
 <contactref element="INTERFACE" pad="4"/>
 <contactref element="TP1" pad="2"/>
-<wire x1="9.675" y1="15.24" x2="21.59" y2="15.24" width="0.3048" layer="16"/>
-<wire x1="21.59" y1="15.24" x2="29.21" y2="22.86" width="0.3048" layer="16"/>
-<wire x1="29.21" y1="22.86" x2="39.624" y2="22.86" width="0.3048" layer="1"/>
-<wire x1="39.624" y1="22.86" x2="40.132" y2="23.368" width="0.3048" layer="1"/>
+<wire x1="9.675" y1="24.13" x2="21.59" y2="24.13" width="0.3048" layer="16"/>
+<wire x1="21.59" y1="24.13" x2="29.21" y2="31.75" width="0.3048" layer="16"/>
+<wire x1="29.21" y1="31.75" x2="39.624" y2="31.75" width="0.3048" layer="1"/>
+<wire x1="39.624" y1="31.75" x2="40.132" y2="32.258" width="0.3048" layer="1"/>
 </signal>
 <signal name="TXD">
 <contactref element="PC" pad="2"/>
 <contactref element="INTERFACE" pad="2"/>
 <contactref element="TP1" pad="1"/>
-<wire x1="9.675" y1="12.47" x2="30.885" y2="12.47" width="0.3048" layer="16"/>
-<wire x1="30.885" y1="12.47" x2="34.29" y2="16.51" width="0.3048" layer="16"/>
-<wire x1="34.29" y1="16.51" x2="34.29" y2="20.193" width="0.3048" layer="16"/>
-<wire x1="34.29" y1="20.193" x2="40.132" y2="25.4" width="0.3048" layer="16"/>
-<wire x1="29.21" y1="25.4" x2="40.132" y2="25.4" width="0.3048" layer="1"/>
+<wire x1="9.675" y1="21.36" x2="30.25" y2="21.36" width="0.3048" layer="16"/>
+<wire x1="30.25" y1="21.36" x2="34.29" y2="25.4" width="0.3048" layer="16"/>
+<wire x1="34.29" y1="25.4" x2="34.29" y2="29.083" width="0.3048" layer="16"/>
+<wire x1="34.29" y1="29.083" x2="40.132" y2="34.29" width="0.3048" layer="16"/>
+<wire x1="29.21" y1="34.29" x2="40.132" y2="34.29" width="0.3048" layer="1"/>
 </signal>
-<signal name="P6">
+<signal name="TX2">
 <contactref element="TP1" pad="3"/>
 <contactref element="INTERFACE" pad="6"/>
-<wire x1="29.21" y1="20.32" x2="39.116" y2="20.32" width="0.3048" layer="1"/>
-<wire x1="39.116" y1="20.32" x2="40.132" y2="21.336" width="0.3048" layer="1"/>
+<wire x1="29.21" y1="29.21" x2="39.116" y2="29.21" width="0.3048" layer="1"/>
+<wire x1="39.116" y1="29.21" x2="40.132" y2="30.226" width="0.3048" layer="1"/>
 </signal>
 <signal name="P8">
 <contactref element="TP1" pad="4"/>
 <contactref element="INTERFACE" pad="8"/>
-<wire x1="29.21" y1="17.78" x2="38.608" y2="17.78" width="0.3048" layer="1"/>
-<wire x1="38.608" y1="17.78" x2="40.132" y2="19.304" width="0.3048" layer="1"/>
+<wire x1="29.21" y1="26.67" x2="38.608" y2="26.67" width="0.3048" layer="1"/>
+<wire x1="38.608" y1="26.67" x2="40.132" y2="28.194" width="0.3048" layer="1"/>
 </signal>
 <signal name="VIN2">
 <contactref element="FUSE" pad="1"/>
 <contactref element="INTERFACE" pad="5"/>
 <contactref element="INTERFACE" pad="7"/>
-<wire x1="41.91" y1="22.352" x2="41.91" y2="20.32" width="0.6096" layer="1"/>
-<wire x1="25.4" y1="20.32" x2="20.32" y2="26.67" width="0.6096" layer="1"/>
-<wire x1="25.4" y1="17.78" x2="25.4" y2="20.32" width="0.6096" layer="1"/>
-<wire x1="28.575" y1="14.605" x2="25.4" y2="17.78" width="0.6096" layer="1"/>
-<wire x1="41.91" y1="18.415" x2="38.1" y2="14.605" width="0.6096" layer="1"/>
-<wire x1="38.1" y1="14.605" x2="28.575" y2="14.605" width="0.6096" layer="1"/>
-<wire x1="41.91" y1="20.32" x2="41.91" y2="18.415" width="0.6096" layer="1"/>
-<wire x1="20.32" y1="26.67" x2="20.32" y2="26.240740625" width="0.1524" layer="1"/>
-</signal>
-<signal name="GND1">
-<contactref element="POWER1" pad="3"/>
-<contactref element="PC1" pad="5"/>
-<contactref element="INTERFACE1" pad="1"/>
-<contactref element="INTERFACE1" pad="3"/>
-<contactref element="TP4" pad="2"/>
-<polygon width="0.4064" layer="16">
-<vertex x="53.34" y="39.37"/>
-<vertex x="96.52" y="39.37" curve="-90"/>
-<vertex x="99.06" y="36.83"/>
-<vertex x="99.06" y="-6.35" curve="-90"/>
-<vertex x="96.52" y="-8.89"/>
-<vertex x="53.34" y="-8.89" curve="-90"/>
-<vertex x="50.8" y="-6.35"/>
-<vertex x="50.8" y="36.83" curve="-90"/>
-</polygon>
-<polygon width="0.4064" layer="1">
-<vertex x="53.34" y="39.37"/>
-<vertex x="96.52" y="39.37" curve="-90"/>
-<vertex x="99.06" y="36.83"/>
-<vertex x="99.06" y="-6.35" curve="-90"/>
-<vertex x="96.52" y="-8.89"/>
-<vertex x="53.34" y="-8.89" curve="-90"/>
-<vertex x="50.8" y="-6.35"/>
-<vertex x="50.8" y="36.83" curve="-90"/>
-</polygon>
-</signal>
-<signal name="VIN1">
-<contactref element="TP4" pad="1"/>
-<contactref element="POWER1" pad="1"/>
-<contactref element="FUSE1" pad="2"/>
-<wire x1="80.01" y1="4.874259375" x2="80.01" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="80.01" y1="5.08" x2="86.509859375" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="71.12" y1="4.239259375" x2="71.960740625" y2="5.08" width="0.6096" layer="16"/>
-<wire x1="71.960740625" y1="5.08" x2="80.01" y2="5.08" width="0.6096" layer="16"/>
-</signal>
-<signal name="RXD1">
-<contactref element="PC1" pad="3"/>
-<contactref element="INTERFACE1" pad="4"/>
-<contactref element="TP3" pad="2"/>
-<wire x1="60.475" y1="15.24" x2="72.39" y2="15.24" width="0.3048" layer="16"/>
-<wire x1="72.39" y1="15.24" x2="80.01" y2="22.86" width="0.3048" layer="16"/>
-<wire x1="80.01" y1="22.86" x2="90.424" y2="22.86" width="0.3048" layer="1"/>
-<wire x1="90.424" y1="22.86" x2="90.932" y2="23.368" width="0.3048" layer="1"/>
-</signal>
-<signal name="TXD1">
-<contactref element="PC1" pad="2"/>
-<contactref element="INTERFACE1" pad="2"/>
-<contactref element="TP3" pad="1"/>
-<wire x1="60.475" y1="12.47" x2="81.685" y2="12.47" width="0.3048" layer="16"/>
-<wire x1="81.685" y1="12.47" x2="85.09" y2="16.51" width="0.3048" layer="16"/>
-<wire x1="85.09" y1="16.51" x2="85.09" y2="20.193" width="0.3048" layer="16"/>
-<wire x1="85.09" y1="20.193" x2="90.932" y2="25.4" width="0.3048" layer="16"/>
-<wire x1="80.01" y1="25.4" x2="90.932" y2="25.4" width="0.3048" layer="1"/>
-</signal>
-<signal name="P1">
-<contactref element="TP3" pad="3"/>
-<contactref element="INTERFACE1" pad="6"/>
-<wire x1="80.01" y1="20.32" x2="89.916" y2="20.32" width="0.3048" layer="1"/>
-<wire x1="89.916" y1="20.32" x2="90.932" y2="21.336" width="0.3048" layer="1"/>
-</signal>
-<signal name="P2">
-<contactref element="TP3" pad="4"/>
-<contactref element="INTERFACE1" pad="8"/>
-<wire x1="80.01" y1="17.78" x2="89.408" y2="17.78" width="0.3048" layer="1"/>
-<wire x1="89.408" y1="17.78" x2="90.932" y2="19.304" width="0.3048" layer="1"/>
-</signal>
-<signal name="VIN3">
-<contactref element="FUSE1" pad="1"/>
-<contactref element="INTERFACE1" pad="5"/>
-<contactref element="INTERFACE1" pad="7"/>
-<wire x1="92.71" y1="22.352" x2="92.71" y2="20.32" width="0.6096" layer="1"/>
-<wire x1="76.2" y1="20.32" x2="71.12" y2="26.67" width="0.6096" layer="1"/>
-<wire x1="76.2" y1="17.78" x2="76.2" y2="20.32" width="0.6096" layer="1"/>
-<wire x1="79.375" y1="14.605" x2="76.2" y2="17.78" width="0.6096" layer="1"/>
-<wire x1="92.71" y1="18.415" x2="88.9" y2="14.605" width="0.6096" layer="1"/>
-<wire x1="88.9" y1="14.605" x2="79.375" y2="14.605" width="0.6096" layer="1"/>
-<wire x1="92.71" y1="20.32" x2="92.71" y2="18.415" width="0.6096" layer="1"/>
-<wire x1="71.12" y1="26.67" x2="71.12" y2="26.240740625" width="0.1524" layer="1"/>
-</signal>
-<signal name="GND2">
-<contactref element="POWER2" pad="3"/>
-<contactref element="PC2" pad="5"/>
-<contactref element="INTERFACE2" pad="1"/>
-<contactref element="INTERFACE2" pad="3"/>
-<contactref element="TP6" pad="2"/>
-<polygon width="0.4064" layer="16">
-<vertex x="2.54" y="90.17"/>
-<vertex x="45.72" y="90.17" curve="-90"/>
-<vertex x="48.26" y="87.63"/>
-<vertex x="48.26" y="44.45" curve="-90"/>
-<vertex x="45.72" y="41.91"/>
-<vertex x="2.54" y="41.91" curve="-90"/>
-<vertex x="0" y="44.45"/>
-<vertex x="0" y="87.63" curve="-90"/>
-</polygon>
-<polygon width="0.4064" layer="1">
-<vertex x="2.54" y="90.17"/>
-<vertex x="45.72" y="90.17" curve="-90"/>
-<vertex x="48.26" y="87.63"/>
-<vertex x="48.26" y="44.45" curve="-90"/>
-<vertex x="45.72" y="41.91"/>
-<vertex x="2.54" y="41.91" curve="-90"/>
-<vertex x="0" y="44.45"/>
-<vertex x="0" y="87.63" curve="-90"/>
-</polygon>
-</signal>
-<signal name="VIN4">
-<contactref element="TP6" pad="1"/>
-<contactref element="POWER2" pad="1"/>
-<contactref element="FUSE2" pad="2"/>
-<wire x1="29.21" y1="55.674259375" x2="29.21" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="29.21" y1="55.88" x2="35.709859375" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="20.32" y1="55.039259375" x2="21.160740625" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="21.160740625" y1="55.88" x2="29.21" y2="55.88" width="0.6096" layer="16"/>
-</signal>
-<signal name="RXD2">
-<contactref element="PC2" pad="3"/>
-<contactref element="INTERFACE2" pad="4"/>
-<contactref element="TP5" pad="2"/>
-<wire x1="9.675" y1="66.04" x2="21.59" y2="66.04" width="0.3048" layer="16"/>
-<wire x1="21.59" y1="66.04" x2="29.21" y2="73.66" width="0.3048" layer="16"/>
-<wire x1="29.21" y1="73.66" x2="39.624" y2="73.66" width="0.3048" layer="1"/>
-<wire x1="39.624" y1="73.66" x2="40.132" y2="74.168" width="0.3048" layer="1"/>
-</signal>
-<signal name="TXD2">
-<contactref element="PC2" pad="2"/>
-<contactref element="INTERFACE2" pad="2"/>
-<contactref element="TP5" pad="1"/>
-<wire x1="9.675" y1="63.27" x2="30.885" y2="63.27" width="0.3048" layer="16"/>
-<wire x1="30.885" y1="63.27" x2="34.29" y2="67.31" width="0.3048" layer="16"/>
-<wire x1="34.29" y1="67.31" x2="34.29" y2="70.993" width="0.3048" layer="16"/>
-<wire x1="34.29" y1="70.993" x2="40.132" y2="76.2" width="0.3048" layer="16"/>
-<wire x1="29.21" y1="76.2" x2="40.132" y2="76.2" width="0.3048" layer="1"/>
-</signal>
-<signal name="P3">
-<contactref element="TP5" pad="3"/>
-<contactref element="INTERFACE2" pad="6"/>
-<wire x1="29.21" y1="71.12" x2="39.116" y2="71.12" width="0.3048" layer="1"/>
-<wire x1="39.116" y1="71.12" x2="40.132" y2="72.136" width="0.3048" layer="1"/>
-</signal>
-<signal name="P4">
-<contactref element="TP5" pad="4"/>
-<contactref element="INTERFACE2" pad="8"/>
-<wire x1="29.21" y1="68.58" x2="38.608" y2="68.58" width="0.3048" layer="1"/>
-<wire x1="38.608" y1="68.58" x2="40.132" y2="70.104" width="0.3048" layer="1"/>
-</signal>
-<signal name="VIN5">
-<contactref element="FUSE2" pad="1"/>
-<contactref element="INTERFACE2" pad="5"/>
-<contactref element="INTERFACE2" pad="7"/>
-<wire x1="41.91" y1="73.152" x2="41.91" y2="71.12" width="0.6096" layer="1"/>
-<wire x1="25.4" y1="71.12" x2="20.32" y2="77.47" width="0.6096" layer="1"/>
-<wire x1="25.4" y1="68.58" x2="25.4" y2="71.12" width="0.6096" layer="1"/>
-<wire x1="28.575" y1="65.405" x2="25.4" y2="68.58" width="0.6096" layer="1"/>
-<wire x1="41.91" y1="69.215" x2="38.1" y2="65.405" width="0.6096" layer="1"/>
-<wire x1="38.1" y1="65.405" x2="28.575" y2="65.405" width="0.6096" layer="1"/>
-<wire x1="41.91" y1="71.12" x2="41.91" y2="69.215" width="0.6096" layer="1"/>
-<wire x1="20.32" y1="77.47" x2="20.32" y2="77.040740625" width="0.1524" layer="1"/>
-</signal>
-<signal name="GND3">
-<contactref element="POWER3" pad="3"/>
-<contactref element="PC3" pad="5"/>
-<contactref element="INTERFACE3" pad="1"/>
-<contactref element="INTERFACE3" pad="3"/>
-<contactref element="TP8" pad="2"/>
-<polygon width="0.4064" layer="16">
-<vertex x="53.34" y="90.17"/>
-<vertex x="96.52" y="90.17" curve="-90"/>
-<vertex x="99.06" y="87.63"/>
-<vertex x="99.06" y="44.45" curve="-90"/>
-<vertex x="96.52" y="41.91"/>
-<vertex x="53.34" y="41.91" curve="-90"/>
-<vertex x="50.8" y="44.45"/>
-<vertex x="50.8" y="87.63" curve="-90"/>
-</polygon>
-<polygon width="0.4064" layer="1">
-<vertex x="53.34" y="90.17"/>
-<vertex x="96.52" y="90.17" curve="-90"/>
-<vertex x="99.06" y="87.63"/>
-<vertex x="99.06" y="44.45" curve="-90"/>
-<vertex x="96.52" y="41.91"/>
-<vertex x="53.34" y="41.91" curve="-90"/>
-<vertex x="50.8" y="44.45"/>
-<vertex x="50.8" y="87.63" curve="-90"/>
-</polygon>
-</signal>
-<signal name="VIN6">
-<contactref element="TP8" pad="1"/>
-<contactref element="POWER3" pad="1"/>
-<contactref element="FUSE3" pad="2"/>
-<wire x1="80.01" y1="55.674259375" x2="80.01" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="80.01" y1="55.88" x2="86.509859375" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="71.12" y1="55.039259375" x2="71.960740625" y2="55.88" width="0.6096" layer="16"/>
-<wire x1="71.960740625" y1="55.88" x2="80.01" y2="55.88" width="0.6096" layer="16"/>
-</signal>
-<signal name="RXD3">
-<contactref element="PC3" pad="3"/>
-<contactref element="INTERFACE3" pad="4"/>
-<contactref element="TP7" pad="2"/>
-<wire x1="60.475" y1="66.04" x2="72.39" y2="66.04" width="0.3048" layer="16"/>
-<wire x1="72.39" y1="66.04" x2="80.01" y2="73.66" width="0.3048" layer="16"/>
-<wire x1="80.01" y1="73.66" x2="90.424" y2="73.66" width="0.3048" layer="1"/>
-<wire x1="90.424" y1="73.66" x2="90.932" y2="74.168" width="0.3048" layer="1"/>
-</signal>
-<signal name="TXD3">
-<contactref element="PC3" pad="2"/>
-<contactref element="INTERFACE3" pad="2"/>
-<contactref element="TP7" pad="1"/>
-<wire x1="60.475" y1="63.27" x2="81.685" y2="63.27" width="0.3048" layer="16"/>
-<wire x1="81.685" y1="63.27" x2="85.09" y2="67.31" width="0.3048" layer="16"/>
-<wire x1="85.09" y1="67.31" x2="85.09" y2="70.993" width="0.3048" layer="16"/>
-<wire x1="85.09" y1="70.993" x2="90.932" y2="76.2" width="0.3048" layer="16"/>
-<wire x1="80.01" y1="76.2" x2="90.932" y2="76.2" width="0.3048" layer="1"/>
-</signal>
-<signal name="P5">
-<contactref element="TP7" pad="3"/>
-<contactref element="INTERFACE3" pad="6"/>
-<wire x1="80.01" y1="71.12" x2="89.916" y2="71.12" width="0.3048" layer="1"/>
-<wire x1="89.916" y1="71.12" x2="90.932" y2="72.136" width="0.3048" layer="1"/>
-</signal>
-<signal name="P7">
-<contactref element="TP7" pad="4"/>
-<contactref element="INTERFACE3" pad="8"/>
-<wire x1="80.01" y1="68.58" x2="89.408" y2="68.58" width="0.3048" layer="1"/>
-<wire x1="89.408" y1="68.58" x2="90.932" y2="70.104" width="0.3048" layer="1"/>
-</signal>
-<signal name="VIN7">
-<contactref element="FUSE3" pad="1"/>
-<contactref element="INTERFACE3" pad="5"/>
-<contactref element="INTERFACE3" pad="7"/>
-<wire x1="92.71" y1="73.152" x2="92.71" y2="71.12" width="0.6096" layer="1"/>
-<wire x1="76.2" y1="71.12" x2="71.12" y2="77.47" width="0.6096" layer="1"/>
-<wire x1="76.2" y1="68.58" x2="76.2" y2="71.12" width="0.6096" layer="1"/>
-<wire x1="79.375" y1="65.405" x2="76.2" y2="68.58" width="0.6096" layer="1"/>
-<wire x1="92.71" y1="69.215" x2="88.9" y2="65.405" width="0.6096" layer="1"/>
-<wire x1="88.9" y1="65.405" x2="79.375" y2="65.405" width="0.6096" layer="1"/>
-<wire x1="92.71" y1="71.12" x2="92.71" y2="69.215" width="0.6096" layer="1"/>
-<wire x1="71.12" y1="77.47" x2="71.12" y2="77.040740625" width="0.1524" layer="1"/>
+<wire x1="41.91" y1="31.242" x2="41.91" y2="29.21" width="0.6096" layer="1"/>
+<wire x1="25.4" y1="29.21" x2="20.32" y2="35.56" width="0.6096" layer="1"/>
+<wire x1="25.4" y1="26.67" x2="25.4" y2="29.21" width="0.6096" layer="1"/>
+<wire x1="28.575" y1="23.495" x2="25.4" y2="26.67" width="0.6096" layer="1"/>
+<wire x1="41.91" y1="27.305" x2="38.1" y2="23.495" width="0.6096" layer="1"/>
+<wire x1="38.1" y1="23.495" x2="28.575" y2="23.495" width="0.6096" layer="1"/>
+<wire x1="41.91" y1="29.21" x2="41.91" y2="27.305" width="0.6096" layer="1"/>
+<wire x1="20.32" y1="35.56" x2="20.32" y2="35.130740625" width="0.1524" layer="1"/>
 </signal>
 </signals>
 </board>

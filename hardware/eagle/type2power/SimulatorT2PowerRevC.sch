@@ -5721,7 +5721,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <parts>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="Simulator Type 2 Power"/>
-<attribute name="CREVISION" value="Rev B 03/2018"/>
+<attribute name="CREVISION" value="Rev C 02/2019"/>
 <attribute name="DESIGNER" value="A J Instone-Cowie"/>
 </part>
 <part name="PC" library="AIC_Custom" deviceset="DB9-CONNECTOR-PCB" device="FEMALE"/>
@@ -5835,7 +5835,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <label x="127" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="P6" class="0">
+<net name="TX2" class="0">
 <segment>
 <pinref part="TP1" gate="G$1" pin="3"/>
 <wire x1="137.16" y1="73.66" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
