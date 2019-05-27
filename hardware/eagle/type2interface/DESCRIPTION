@@ -38,3 +38,7 @@ Bolt hole centre on board Y = 2.582
 Hence edge of silk screen guide line Y = 2.582 - 0.135 = 2.447
 This allows the edge of the board to be used as a guide for forming the VR legs
 </pre>
+
+Rev E 05/2019<br>
+Added Murata ceramic resonator and adjusted board layout to suit.<br>
+8MHz - CSTLS8M00G53-B0

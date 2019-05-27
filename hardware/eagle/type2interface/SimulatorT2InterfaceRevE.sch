@@ -7650,6 +7650,78 @@ Additional footprint on layer 51 tDocu showing outline of TSR-1-2450 switching r
 <wire x1="-5.842" y1="-12.192" x2="-5.842" y2="-4.572" width="0.127" layer="51"/>
 <text x="0" y="-6.35" size="0.762" layer="51" font="vector" align="bottom-center">TSR-1-2450</text>
 </package>
+<package name="TO220H">
+<description>&lt;b&gt;TO220&lt;b&gt;</description>
+<wire x1="-5.207" y1="-7.62" x2="5.207" y2="-7.62" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="8.255" x2="-5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="-7.62" x2="5.207" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="4.826" x2="4.318" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="4.318" y1="4.826" x2="4.318" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="4.318" y1="6.35" x2="5.207" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="6.35" x2="5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="-7.62" x2="-5.207" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="4.826" x2="-4.318" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="-4.318" y1="4.826" x2="-4.318" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-4.318" y1="6.35" x2="-5.207" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="6.35" x2="-5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="-4.572" y1="-6.985" x2="4.572" y2="-6.985" width="0.0508" layer="21"/>
+<wire x1="4.572" y1="1.27" x2="4.572" y2="-6.985" width="0.0508" layer="21"/>
+<wire x1="4.572" y1="1.27" x2="-4.572" y2="1.27" width="0.0508" layer="21"/>
+<wire x1="-4.572" y1="-6.985" x2="-4.572" y2="1.27" width="0.0508" layer="21"/>
+<circle x="0" y="4.826" radius="1.8034" width="0.1524" layer="21"/>
+<circle x="0" y="4.826" radius="2.54" width="0" layer="43"/>
+<circle x="0" y="4.826" radius="2.54" width="0" layer="42"/>
+<pad name="1" x="-2.54" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<pad name="2" x="0" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<text x="-5.461" y="-10.922" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="7.366" y="-11.049" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<rectangle x1="2.159" y1="-11.049" x2="2.921" y2="-10.414" layer="21"/>
+<rectangle x1="-0.381" y1="-11.049" x2="0.381" y2="-10.414" layer="21"/>
+<rectangle x1="-2.921" y1="-11.049" x2="-2.159" y2="-10.414" layer="21"/>
+<rectangle x1="-3.175" y1="-10.414" x2="-1.905" y2="-7.62" layer="21"/>
+<rectangle x1="-0.635" y1="-10.414" x2="0.635" y2="-7.62" layer="21"/>
+<rectangle x1="1.905" y1="-10.414" x2="3.175" y2="-7.62" layer="21"/>
+<hole x="0" y="4.826" drill="3.302"/>
+</package>
+<package name="TO220H+HEATSINK">
+<description>&lt;b&gt;TO220 + Heatsink outline on layer 51 tDocu&lt;b&gt;</description>
+<wire x1="-5.207" y1="-7.62" x2="5.207" y2="-7.62" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="8.255" x2="-5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="-7.62" x2="5.207" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="4.826" x2="4.318" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="4.318" y1="4.826" x2="4.318" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="4.318" y1="6.35" x2="5.207" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="5.207" y1="6.35" x2="5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="-7.62" x2="-5.207" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="4.826" x2="-4.318" y2="4.826" width="0.1524" layer="21"/>
+<wire x1="-4.318" y1="4.826" x2="-4.318" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-4.318" y1="6.35" x2="-5.207" y2="6.35" width="0.1524" layer="21"/>
+<wire x1="-5.207" y1="6.35" x2="-5.207" y2="8.255" width="0.1524" layer="21"/>
+<wire x1="-4.572" y1="-6.985" x2="4.572" y2="-6.985" width="0.0508" layer="21"/>
+<wire x1="4.572" y1="1.27" x2="4.572" y2="-6.985" width="0.0508" layer="21"/>
+<wire x1="4.572" y1="1.27" x2="-4.572" y2="1.27" width="0.0508" layer="21"/>
+<wire x1="-4.572" y1="-6.985" x2="-4.572" y2="1.27" width="0.0508" layer="21"/>
+<circle x="0" y="4.826" radius="1.8034" width="0.1524" layer="21"/>
+<circle x="0" y="4.826" radius="2.54" width="0" layer="43"/>
+<circle x="0" y="4.826" radius="2.54" width="0" layer="42"/>
+<pad name="1" x="-2.54" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<pad name="2" x="0" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="-10.16" drill="1.1176" shape="long" rot="R90"/>
+<text x="-5.461" y="-10.922" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="7.366" y="-11.049" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<rectangle x1="2.159" y1="-11.049" x2="2.921" y2="-10.414" layer="21"/>
+<rectangle x1="-0.381" y1="-11.049" x2="0.381" y2="-10.414" layer="21"/>
+<rectangle x1="-2.921" y1="-11.049" x2="-2.159" y2="-10.414" layer="21"/>
+<rectangle x1="-3.175" y1="-10.414" x2="-1.905" y2="-7.62" layer="21"/>
+<rectangle x1="-0.635" y1="-10.414" x2="0.635" y2="-7.62" layer="21"/>
+<rectangle x1="1.905" y1="-10.414" x2="3.175" y2="-7.62" layer="21"/>
+<hole x="0" y="4.826" drill="3.302"/>
+<wire x1="6.604" y1="10.795" x2="6.604" y2="-8.2042" width="0.127" layer="51"/>
+<wire x1="-6.604" y1="10.795" x2="-6.604" y2="-8.2042" width="0.127" layer="51"/>
+<wire x1="-6.604" y1="10.795" x2="6.604" y2="10.795" width="0.127" layer="51"/>
+<wire x1="-6.604" y1="-8.2042" x2="6.604" y2="-8.2042" width="0.127" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="DIODE_TVS_UNI">
@@ -8034,6 +8106,147 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <technology name=""/>
 </technologies>
 </device>
+<device name="X" package="TO220H">
+<connects>
+<connect gate="A1" pin="GND" pad="2"/>
+<connect gate="A1" pin="VI" pad="1"/>
+<connect gate="A1" pin="VO" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="H" package="TO220H+HEATSINK">
+<connects>
+<connect gate="A1" pin="GND" pad="2"/>
+<connect gate="A1" pin="VI" pad="1"/>
+<connect gate="A1" pin="VO" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="murata-resonators">
+<description>&lt;b&gt;Murata CERALOCK&lt;/b&gt; ceramic resonators&lt;br&gt;
+Datasheet P16E13.PDF 02.3.7
+&lt;p&gt;
+Reichelt
+&lt;p&gt;
+&lt;i&gt;created by J. Bartels&lt;/i&gt;</description>
+<packages>
+<package name="CSTLS_G8">
+<description>CSTGL_S 8x3 mm, grid 2.5 mm&lt;br&gt;
+3.40-10MHz for 16.00-70.00MHz use CSTLS_X</description>
+<wire x1="-1.25" y1="1.4" x2="-1.25" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="0" y1="1.5" x2="3.3" y2="1" width="0.127" layer="21" curve="-18.289543"/>
+<wire x1="3.3" y1="1" x2="4" y2="0" width="0.127" layer="21" curve="-71.075356"/>
+<wire x1="-3.3" y1="1" x2="0" y2="1.5" width="0.127" layer="21" curve="-18.289543"/>
+<wire x1="0" y1="-1.5" x2="3.3" y2="-1" width="0.127" layer="21" curve="18.289543"/>
+<wire x1="-3.3" y1="-1" x2="0" y2="-1.5" width="0.127" layer="21" curve="18.289543"/>
+<wire x1="3.3" y1="-1" x2="4" y2="0" width="0.127" layer="21" curve="71.075356"/>
+<wire x1="-4" y1="0" x2="-3.3" y2="1" width="0.127" layer="21" curve="-71.075356"/>
+<wire x1="-4" y1="0" x2="-3.3" y2="-1" width="0.127" layer="21" curve="71.075356"/>
+<pad name="2" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="1" x="-2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<text x="-4" y="2" size="1.27" layer="21">&gt;NAME</text>
+<text x="-4" y="-3" size="1.27" layer="21">&gt;VALUE</text>
+</package>
+<package name="CSTLS_G9">
+<description>CSTGL_S 9x4 mm, grid 2,5 mm</description>
+<wire x1="-1.25" y1="1.9" x2="-1.25" y2="-1.9" width="0.127" layer="21"/>
+<wire x1="3.7" y1="1.3" x2="4.5" y2="0" width="0.127" layer="21" curve="-61.158454"/>
+<wire x1="0" y1="2" x2="3.7" y2="1.3" width="0.127" layer="21" curve="-19.708909"/>
+<wire x1="0" y1="-2" x2="3.7" y2="-1.3" width="0.127" layer="21" curve="19.708909"/>
+<wire x1="-3.7" y1="1.3" x2="0" y2="2" width="0.127" layer="21" curve="-19.708909"/>
+<wire x1="-3.7" y1="-1.3" x2="0" y2="-2" width="0.127" layer="21" curve="19.708909"/>
+<wire x1="-4.5" y1="0" x2="-3.7" y2="-1.3" width="0.127" layer="21" curve="61.158454"/>
+<wire x1="-4.5" y1="0" x2="-3.7" y2="1.3" width="0.127" layer="21" curve="-61.158454"/>
+<wire x1="3.7" y1="-1.3" x2="4.5" y2="0" width="0.127" layer="21" curve="61.158454"/>
+<pad name="2" x="0" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<pad name="1" x="-2.5" y="0" drill="0.8128" shape="long" rot="R90"/>
+<text x="-4.5" y="2" size="1.27" layer="21">&gt;NAME</text>
+<text x="-4.5" y="-3.5" size="1.27" layer="21">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="CSTLS">
+<wire x1="-0.762" y1="1.524" x2="0.762" y2="1.524" width="0.127" layer="94"/>
+<wire x1="0.762" y1="1.524" x2="0.762" y2="-1.524" width="0.127" layer="94"/>
+<wire x1="0.762" y1="-1.524" x2="-0.762" y2="-1.524" width="0.127" layer="94"/>
+<wire x1="-0.762" y1="-1.524" x2="-0.762" y2="1.524" width="0.127" layer="94"/>
+<wire x1="1.778" y1="1.524" x2="1.778" y2="0" width="0.127" layer="94"/>
+<wire x1="1.778" y1="0" x2="1.778" y2="-1.524" width="0.127" layer="94"/>
+<wire x1="-1.778" y1="1.524" x2="-1.778" y2="0" width="0.127" layer="94"/>
+<wire x1="-1.778" y1="0" x2="-1.778" y2="-1.524" width="0.127" layer="94"/>
+<wire x1="-1.778" y1="0" x2="-3.048" y2="0" width="0.127" layer="94"/>
+<wire x1="-3.048" y1="0" x2="-4.572" y2="0" width="0.127" layer="94"/>
+<wire x1="-4.572" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="0" width="0.127" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="0" width="0.127" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="0" width="0.127" layer="94"/>
+<wire x1="1.778" y1="0" x2="3.048" y2="0" width="0.127" layer="94"/>
+<wire x1="3.048" y1="0" x2="4.572" y2="0" width="0.127" layer="94"/>
+<wire x1="4.572" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="-3.048" y1="0" x2="-3.048" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="-3.048" y1="-3.81" x2="-1.778" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="-1.778" y1="-2.54" x2="-1.778" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="-1.778" y1="-3.81" x2="-1.778" y2="-5.08" width="0.127" layer="94"/>
+<wire x1="-0.762" y1="-2.54" x2="-0.762" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="-0.762" y1="-3.81" x2="-0.762" y2="-5.08" width="0.127" layer="94"/>
+<wire x1="-0.762" y1="-3.81" x2="0" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="0" y1="-3.81" x2="0.762" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="0.762" y1="-2.54" x2="0.762" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="0.762" y1="-3.81" x2="0.762" y2="-5.08" width="0.127" layer="94"/>
+<wire x1="1.778" y1="-2.54" x2="1.778" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="1.778" y1="-3.81" x2="1.778" y2="-5.08" width="0.127" layer="94"/>
+<wire x1="1.778" y1="-3.81" x2="3.048" y2="-3.81" width="0.127" layer="94"/>
+<wire x1="3.048" y1="-3.81" x2="3.048" y2="0" width="0.127" layer="94"/>
+<wire x1="0" y1="-3.81" x2="0" y2="-6.096" width="0.127" layer="94"/>
+<wire x1="0" y1="-6.096" x2="0" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-4.572" y1="2.794" x2="4.572" y2="2.794" width="0.254" layer="94" style="shortdash"/>
+<wire x1="4.572" y1="2.794" x2="4.572" y2="-6.096" width="0.254" layer="94" style="shortdash"/>
+<wire x1="4.572" y1="-6.096" x2="-4.572" y2="-6.096" width="0.254" layer="94" style="shortdash"/>
+<wire x1="-4.572" y1="-6.096" x2="-4.572" y2="2.794" width="0.254" layer="94" style="shortdash"/>
+<text x="-4.572" y="3.302" size="1.27" layer="94">&gt;NAME</text>
+<text x="1.778" y="3.302" size="1.27" layer="94">&gt;VALUE</text>
+<pin name="3" x="5.08" y="0" visible="pad" length="point" direction="in" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="pad" length="point" direction="out"/>
+<pin name="GND" x="0" y="-7.62" visible="pad" length="point" direction="pwr" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CSTLS_G" prefix="Q" uservalue="yes">
+<description>Ceramic resonator 2.00 to 10.00 MHz</description>
+<gates>
+<gate name="G$1" symbol="CSTLS" x="0" y="0"/>
+</gates>
+<devices>
+<device name="*" package="CSTLS_G9">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="CSTLS_G8">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 </devicesets>
@@ -8052,7 +8265,7 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <part name="IC2" library="maxim" deviceset="MAX233" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="Liverpool Simulator Type 2 Interface"/>
-<attribute name="CREVISION" value="Rev D 01/2019"/>
+<attribute name="CREVISION" value="Rev E 05/2019"/>
 <attribute name="DESIGNER" value="A J Instone-Cowie"/>
 </part>
 <part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="PTH" value="100nF"/>
@@ -8089,6 +8302,7 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <part name="TP6" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="PC" library="AIC_Custom" deviceset="RJ45-RJHSE-5084" device=""/>
 <part name="TP7" library="SparkFun-Connectors" deviceset="M01" device="PTH"/>
+<part name="Q1" library="murata-resonators" deviceset="CSTLS_G" device="" value="CSTLS8M00G53-B0"/>
 </parts>
 <sheets>
 <sheet>
@@ -8138,6 +8352,7 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <instance part="TP6" gate="G$1" x="157.48" y="30.48"/>
 <instance part="PC" gate="G$1" x="22.86" y="121.92" rot="MR0"/>
 <instance part="TP7" gate="G$1" x="177.8" y="33.02"/>
+<instance part="Q1" gate="G$1" x="127" y="106.68"/>
 </instances>
 <busses>
 </busses>
@@ -8224,6 +8439,9 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <wire x1="137.16" y1="81.28" x2="137.16" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="81.28" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
 <junction x="137.16" y="81.28"/>
+<pinref part="Q1" gate="G$1" pin="GND"/>
+<wire x1="127" y1="99.06" x2="127" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="127" y1="81.28" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C2" gate="G$1" pin="-"/>
@@ -8834,6 +9052,22 @@ Package has additional footprint on layer 51 tDocu showing outline of TSR-1-2450
 <pinref part="TP5" gate="G$1" pin="2"/>
 <wire x1="144.78" y1="27.94" x2="152.4" y2="27.94" width="0.1524" layer="91"/>
 <label x="147.32" y="27.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="OSC2" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="3"/>
+<pinref part="IC3" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
+<wire x1="132.08" y1="106.68" x2="142.24" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="OSC1" class="0">
+<segment>
+<pinref part="IC3" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
+<wire x1="142.24" y1="111.76" x2="119.38" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="111.76" x2="119.38" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="106.68" x2="121.92" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
