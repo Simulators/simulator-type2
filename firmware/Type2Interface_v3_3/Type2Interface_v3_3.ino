@@ -37,20 +37,34 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 
 /*
 ATmega328P fuse settings for 8MHz internal clock:
-low_fuses=0xe2
+(Type 2 Interface Board Rev D and earlier)
+low_fuses=0xE2
 	SUT0
 	CKSEL3
 	CKSEL2
 	CKSEL0
-high_fuses=0xdF
+high_fuses=0xDF
 	SPIEN
-extended_fuses=0x05
+extended_fuses=0xFD
 	BODLEVEL1
+	
+ATmega328P fuse settings for 8MHz external ceramic resonator:
+(Type 2 Interface Board Rev E and later)
+low_fuses=0xCF
+	SUT0
+	SUT1
+high_fuses=0xDF
+	SPIEN
+extended_fuses=0xFD
+	BODLEVEL1
+
+The appropriate set of fuses is selected in the Arduino IDE by selecting the
+correct board type in the Liverpool Ringing Simulator Boards set.
 
 Unlike the previous hardware, we do now clear the EEPROM on load (high fuse 0xdF instead of
 0xd7), so we can be confident of getting a workable startup config even if the interface has
 not been configured. See loadFromEEPROM() and defaulMask.
-	
+
 */
 
 // Simulator Interface Hardware Type
@@ -334,7 +348,7 @@ const char validMappedChars[] = "1234567890ETABCDWXYZ";
 */
 
 // the setup routine runs once on powerup or reset:
-void setup() {   
+void setup() {  
 
 	// initialize the LED pins as outputs.
 	pinMode( LED, OUTPUT );
