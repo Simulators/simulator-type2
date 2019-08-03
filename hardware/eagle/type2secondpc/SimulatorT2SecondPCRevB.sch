@@ -4161,6 +4161,65 @@ Front edge is 0.2" from origin.</description>
 <wire x1="0" y1="9.906" x2="0" y2="-5.08" width="0.2032" layer="21"/>
 <hole x="-1.524" y="0" drill="3.2"/>
 </package>
+<package name="DO41_TVS_BI">
+<description>&lt;B&gt;D041 TVS DIODE&lt;/B&gt;&lt;p&gt;
+Bi-Directional&lt;br&gt;
+diameter 2.54 mm, horizontal, grid 10.16 mm</description>
+<wire x1="2.032" y1="-1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0" x2="4.064" y2="0" width="0.254" layer="51"/>
+<wire x1="-5.08" y1="0" x2="-4.064" y2="0" width="0.254" layer="51"/>
+<wire x1="1.016" y1="0.635" x2="1.016" y2="0" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0" x2="1.016" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="-0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="1.016" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="A" x="5.08" y="0" drill="1.1176" diameter="1.9304"/>
+<pad name="C" x="-5.08" y="0" drill="1.1176" diameter="1.9304"/>
+<text x="-2.032" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.032" y="-2.794" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="2.032" y1="-0.127" x2="3.937" y2="0.127" layer="21"/>
+<rectangle x1="-3.937" y1="-0.127" x2="-2.032" y2="0.127" layer="21"/>
+<wire x1="-1.016" y1="-0.635" x2="-1.016" y2="0" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0" x2="-1.016" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="-1.016" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="0.3175" y2="-0.9525" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="-0.3175" y2="0.9525" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0" x2="-1.5875" y2="0" width="0.1524" layer="21"/>
+<wire x1="1.016" y1="0" x2="1.5875" y2="0" width="0.1524" layer="21"/>
+</package>
+<package name="DO41_TVS_UNI">
+<description>&lt;B&gt;D041 TVS DIODE&lt;/B&gt;&lt;p&gt;
+Uni-Directional&lt;br&gt;
+diameter 2.54 mm, horizontal, grid 10.16 mm</description>
+<wire x1="2.032" y1="-1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="2.032" y1="-1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0" x2="4.064" y2="0" width="0.254" layer="51"/>
+<wire x1="-5.08" y1="0" x2="-4.064" y2="0" width="0.254" layer="51"/>
+<wire x1="0" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="CATHODE" x="5.08" y="0" drill="1.1176" diameter="1.9304"/>
+<pad name="ANODE" x="-5.08" y="0" drill="1.1176" diameter="1.9304"/>
+<text x="-2.032" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.032" y="-2.794" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="2.032" y1="-0.127" x2="3.937" y2="0.127" layer="21"/>
+<rectangle x1="-3.937" y1="-0.127" x2="-2.032" y2="0.127" layer="21"/>
+<wire x1="-1.016" y1="-0.635" x2="-1.016" y2="0" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0" x2="-1.016" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0.635" x2="0" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="-1.016" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="0.3175" y2="-0.9525" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="-0.3175" y2="0.9525" width="0.1524" layer="21"/>
+<wire x1="-1.016" y1="0" x2="-1.5875" y2="0" width="0.1524" layer="21"/>
+<wire x1="0" y1="0" x2="0.635" y2="0" width="0.127" layer="21"/>
+<rectangle x1="1.016" y1="-1.27" x2="1.524" y2="1.27" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="DB9_CONNECTOR">
@@ -4262,6 +4321,37 @@ Front edge is 0.2" from origin.</description>
 <text x="0.762" y="-16.002" size="1.778" layer="94">Grn</text>
 <text x="-7.62" y="23.368" size="1.778" layer="95">&gt;Name</text>
 </symbol>
+<symbol name="DIODE_TVS_BI">
+<description>&lt;B&gt;Generic Bi-Directional TVS Diode&lt;B&gt;</description>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.54" y="2.2606" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-3.0734" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<wire x1="3.81" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="3.81" y2="1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.778" width="0.254" layer="94"/>
+</symbol>
+<symbol name="DIODE_TVS_UNI">
+<description>&lt;B&gt;Generic Bi-Directional TVS Diode&lt;B&gt;</description>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<text x="2.54" y="2.2606" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-3.0734" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="CATHODE" x="0" y="0" visible="off" length="short" direction="pas"/>
+<pin name="ANODE" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<wire x1="3.81" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="3.81" y2="1.27" width="0.254" layer="94"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="0.762" y2="1.778" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="DB9-CONNECTOR-PCB" prefix="JP" uservalue="yes">
@@ -4339,6 +4429,46 @@ RJ45 8-pin connection PCB PTH connector, 2-Port 90 degree package&lt;br&gt;
 <connect gate="G$1" pin="B6" pad="B6"/>
 <connect gate="G$1" pin="B7" pad="B7"/>
 <connect gate="G$1" pin="B8" pad="B8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SA15CA">
+<description>&lt;B&gt;SA15CA TVS&lt;B&gt;&lt;P&gt;
+
+Bi-Directional Transient Voltage Suppressor.
+15V, DO41 package</description>
+<gates>
+<gate name="G$1" symbol="DIODE_TVS_BI" x="-2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="DO41_TVS_BI">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SA12A">
+<description>&lt;B&gt;SA12A TVS&lt;B&gt;&lt;P&gt;
+
+Uni-Directional Transient Voltage Suppressor.
+12V, DO41 package</description>
+<gates>
+<gate name="G$1" symbol="DIODE_TVS_UNI" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="DO41_TVS_UNI">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5667,7 +5797,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <parts>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="Simulator Type 2 Second PC"/>
-<attribute name="CREVISION" value="Rev A 04/2019"/>
+<attribute name="CREVISION" value="Rev B 07/2019"/>
 <attribute name="DESIGNER" value="A J Instone-Cowie"/>
 </part>
 <part name="PC2" library="AIC_Custom" deviceset="DB9-CONNECTOR-PCB" device="FEMALE"/>
@@ -5678,6 +5808,10 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="TP2" library="SparkFun-Connectors" deviceset="M02" device="PTH"/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP1" library="AIC_Custom" deviceset="RJ45-RJHSE-5080-02" device="2HOLE" value="RJ45-RJHSE-5080-022HOLE"/>
+<part name="D2" library="AIC_Custom" deviceset="SA15CA" device=""/>
+<part name="D4" library="AIC_Custom" deviceset="SA15CA" device=""/>
+<part name="D3" library="AIC_Custom" deviceset="SA15CA" device=""/>
+<part name="D1" library="AIC_Custom" deviceset="SA12A" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5692,14 +5826,18 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <attribute name="DESIGNER" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 <attribute name="CREVISION" x="5.08" y="5.08" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="PC2" gate="G$1" x="96.52" y="106.68" rot="MR0"/>
+<instance part="PC2" gate="G$1" x="91.44" y="106.68" rot="MR0"/>
 <instance part="GND1" gate="1" x="167.64" y="40.64"/>
-<instance part="GND3" gate="1" x="116.84" y="40.64"/>
+<instance part="GND3" gate="1" x="106.68" y="40.64"/>
 <instance part="LOGO1" gate="G$1" x="261.62" y="175.26"/>
-<instance part="TP1" gate="G$1" x="132.08" y="76.2" rot="MR180"/>
+<instance part="TP1" gate="G$1" x="132.08" y="68.58" rot="MR180"/>
 <instance part="TP2" gate="G$1" x="129.54" y="50.8" rot="MR180"/>
 <instance part="GND4" gate="1" x="142.24" y="40.64"/>
 <instance part="JP1" gate="G$1" x="190.5" y="101.6"/>
+<instance part="D2" gate="G$1" x="127" y="93.98" rot="R90"/>
+<instance part="D4" gate="G$1" x="119.38" y="93.98" rot="R90"/>
+<instance part="D3" gate="G$1" x="111.76" y="93.98" rot="R90"/>
+<instance part="D1" gate="G$1" x="134.62" y="96.52" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -5708,8 +5846,25 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <segment>
 <pinref part="PC2" gate="G$1" pin="5"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="104.14" y1="101.6" x2="116.84" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="101.6" x2="116.84" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="101.6" x2="106.68" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="101.6" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="106.68" y1="76.2" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="127" y1="91.44" x2="127" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="127" y1="76.2" x2="119.38" y2="76.2" width="0.1524" layer="91"/>
+<junction x="106.68" y="76.2"/>
+<pinref part="D3" gate="G$1" pin="A"/>
+<wire x1="119.38" y1="76.2" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="76.2" x2="106.68" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="91.44" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
+<junction x="111.76" y="76.2"/>
+<pinref part="D4" gate="G$1" pin="A"/>
+<wire x1="119.38" y1="91.44" x2="119.38" y2="76.2" width="0.1524" layer="91"/>
+<junction x="119.38" y="76.2"/>
+<pinref part="D1" gate="G$1" pin="ANODE"/>
+<wire x1="134.62" y1="91.44" x2="134.62" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="76.2" x2="127" y2="76.2" width="0.1524" layer="91"/>
+<junction x="127" y="76.2"/>
 </segment>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -5739,8 +5894,8 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <net name="RXD" class="0">
 <segment>
 <pinref part="TP1" gate="G$1" pin="2"/>
-<wire x1="137.16" y1="76.2" x2="142.24" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="76.2" x2="142.24" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="68.58" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="68.58" x2="142.24" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="G$1" pin="B4"/>
 <wire x1="142.24" y1="114.3" x2="162.56" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="114.3" x2="180.34" y2="114.3" width="0.1524" layer="91"/>
@@ -5749,42 +5904,54 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <pinref part="JP1" gate="G$1" pin="A4"/>
 <wire x1="162.56" y1="91.44" x2="180.34" y2="91.44" width="0.1524" layer="91"/>
 <label x="142.24" y="114.3" size="1.778" layer="95"/>
+<pinref part="D4" gate="G$1" pin="C"/>
+<wire x1="142.24" y1="114.3" x2="119.38" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="114.3" x2="119.38" y2="99.06" width="0.1524" layer="91"/>
+<junction x="142.24" y="114.3"/>
 </segment>
 </net>
 <net name="TXD" class="0">
 <segment>
-<wire x1="139.7" y1="116.84" x2="165.1" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="116.84" x2="165.1" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="119.38" x2="180.34" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="TP1" gate="G$1" pin="1"/>
-<wire x1="137.16" y1="78.74" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="78.74" x2="139.7" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="71.12" x2="139.7" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="71.12" x2="139.7" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="G$1" pin="B2"/>
-<wire x1="165.1" y1="119.38" x2="180.34" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="116.84" x2="165.1" y2="96.52" width="0.1524" layer="91"/>
-<junction x="165.1" y="116.84"/>
-<pinref part="JP1" gate="G$1" pin="A2"/>
-<wire x1="165.1" y1="96.52" x2="180.34" y2="96.52" width="0.1524" layer="91"/>
-<label x="139.7" y="116.84" size="1.778" layer="95"/>
+<label x="139.7" y="119.38" size="1.778" layer="95"/>
+<pinref part="D3" gate="G$1" pin="C"/>
+<wire x1="139.7" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="119.38" x2="111.76" y2="109.22" width="0.1524" layer="91"/>
+<junction x="139.7" y="119.38"/>
+<pinref part="PC2" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="109.22" x2="111.76" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="109.22" x2="111.76" y2="109.22" width="0.1524" layer="91"/>
+<junction x="111.76" y="109.22"/>
 </segment>
 </net>
 <net name="TX2" class="0">
 <segment>
 <pinref part="TP1" gate="G$1" pin="3"/>
-<wire x1="137.16" y1="73.66" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="73.66" x2="144.78" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="66.04" x2="144.78" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="66.04" x2="144.78" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="G$1" pin="B6"/>
-<wire x1="144.78" y1="109.22" x2="180.34" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="PC2" gate="G$1" pin="2"/>
-<wire x1="144.78" y1="109.22" x2="104.14" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="109.22" x2="165.1" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="109.22" x2="180.34" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="109.22" x2="127" y2="109.22" width="0.1524" layer="91"/>
 <junction x="144.78" y="109.22"/>
 <label x="147.32" y="109.22" size="1.778" layer="95"/>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="127" y1="99.06" x2="127" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="G$1" pin="A2"/>
+<wire x1="180.34" y1="96.52" x2="165.1" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="96.52" x2="165.1" y2="109.22" width="0.1524" layer="91"/>
+<junction x="165.1" y="109.22"/>
 </segment>
 </net>
 <net name="P8" class="0">
 <segment>
 <pinref part="TP1" gate="G$1" pin="4"/>
-<wire x1="137.16" y1="71.12" x2="147.32" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="71.12" x2="147.32" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="63.5" x2="147.32" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="63.5" x2="147.32" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="G$1" pin="B8"/>
 <wire x1="147.32" y1="104.14" x2="157.48" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="104.14" x2="180.34" y2="104.14" width="0.1524" layer="91"/>
@@ -5810,6 +5977,10 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <wire x1="180.34" y1="83.82" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="83.82" x2="160.02" y2="88.9" width="0.1524" layer="91"/>
 <junction x="160.02" y="88.9"/>
+<pinref part="D1" gate="G$1" pin="CATHODE"/>
+<wire x1="160.02" y1="106.68" x2="134.62" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="106.68" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
+<label x="134.62" y="106.68" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="TP2" gate="G$1" pin="1"/>

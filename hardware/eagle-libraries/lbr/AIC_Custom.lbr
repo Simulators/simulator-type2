@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -3033,6 +3033,25 @@ Additional row of pads lined to the lower row, to enable use of a 0.1" header an
 <wire x1="-10.287" y1="3.683" x2="-10.287" y2="-0.381" width="0.2032" layer="21"/>
 <wire x1="10.287" y1="3.683" x2="10.287" y2="-0.381" width="0.2032" layer="21"/>
 </package>
+<package name="SOLDER_JUMP_2PAD_NC">
+<description>&lt;b&gt;Solder jumper&lt;/b&gt;</description>
+<wire x1="0.889" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
+<wire x1="0.889" y1="1.016" x2="1.143" y2="0.762" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
+<wire x1="0.889" y1="-1.016" x2="1.143" y2="-0.762" width="0.1524" layer="21" curve="90"/>
+<wire x1="1.143" y1="-0.762" x2="1.143" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-2.159" y1="1.016" x2="0.889" y2="1.016" width="0.1524" layer="21"/>
+<wire x1="0.508" y1="0" x2="1.016" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
+<wire x1="-0.254" y1="0.127" x2="-0.254" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<smd name="3" x="0.254" y="0" dx="1.1684" dy="1.6002" layer="1"/>
+<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<wire x1="-1.27" y1="0" x2="0" y2="0" width="0.1524" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="2SS52M">
@@ -4300,6 +4319,17 @@ Additional row of pads lined to the lower row, to enable use of a 0.1" header an
 <text x="369.54" y="1.17" size="2.54" layer="94" font="vector">&gt;CREVISION</text>
 <frame x1="-3.81" y1="-3.81" x2="411.48" y2="289.56" columns="10" rows="8" layer="94"/>
 </symbol>
+<symbol name="SOLDER_JUMP_2PAD_NC">
+<wire x1="0.381" y1="0.635" x2="0.381" y2="-0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<wire x1="-0.762" y1="0" x2="0.762" y2="0" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="2SS52M">
@@ -4915,7 +4945,7 @@ Manufacturer Part No MFP220</description>
 </devices>
 </deviceset>
 <deviceset name="SA5.0A">
-<description>&lt;B&gt;SA5.0CA TVS&lt;B&gt;&lt;P&gt;
+<description>&lt;B&gt;SA5.0A TVS&lt;B&gt;&lt;P&gt;
 
 Uni-Directional Transient Voltage Suppressor.
 5V, DO41 package</description>
@@ -5669,6 +5699,64 @@ Standard A4 size frame in Landscape</description>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SA12A">
+<description>&lt;B&gt;SA12A TVS&lt;B&gt;&lt;P&gt;
+
+Uni-Directional Transient Voltage Suppressor.
+12V, DO41 package</description>
+<gates>
+<gate name="G$1" symbol="DIODE_TVS_UNI" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="DO41_TVS_UNI">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SA15CA">
+<description>&lt;B&gt;SA15CA TVS&lt;B&gt;&lt;P&gt;
+
+Bi-Directional Transient Voltage Suppressor.
+15V, DO41 package</description>
+<gates>
+<gate name="G$1" symbol="DIODE_TVS_BI" x="-2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="DO41_TVS_BI">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SOLDERJUMPER_NC" prefix="SJ">
+<description>&lt;b&gt;Solder Jumper&lt;/b&gt;
+Standard SMD solder jumper. Used to automate production. Two varients : Normally Open and Normally Closed are the same, but have different paste layers. NC will have a large amount of paste and should jumper during reflow.</description>
+<gates>
+<gate name="1" symbol="SOLDER_JUMP_2PAD_NC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOLDER_JUMP_2PAD_NC">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="3"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
