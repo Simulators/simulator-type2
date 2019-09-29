@@ -1,7 +1,10 @@
 Simulator Type 2 Power Board<br>
 Rev B<br>
 03/2018<br>
-Size reduced slightly to allow 4-way Seeedstudio panelization at 100mm x 100mm.<br>
+Size reduced slightly to allow 4-way Seeedstudio panelization at 100mm x 100mm.<p>
 Rev C<br>
 02/2019<br>
-Added polarity indication for barrel connector
+Added polarity indication for barrel connector<p>
+Rev D<br>
+07/2019<br>
+Add TVS diodes on power and serial lines.<p>

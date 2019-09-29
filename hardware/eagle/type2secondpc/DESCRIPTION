@@ -3,6 +3,10 @@ Rev A<br>
 04/2019<br>
 Allows a second PC to be daisy-chained between the Power Board and Interface.<br>
 Requires Interface Board Rev D or later, or the following mod to the Interface board:<br>
- - Connect pins 1 and 2 of IC2 together (IC2 is the MAX233), a solder bridge on the solder side of the board will do,<br>
- - Connect an insulated wire link between Pin 18 of IC2 and either Pin 6 of the RJ45 or Pin 2 of TP5 on the solder side of the board.<br>
- - Connecting to TP5 is probably easier.
+- Connect pins 1 and 2 of IC2 together (IC2 is the MAX233), a solder bridge on the solder side of the board will do,<br>
+- Connect an insulated wire link between Pin 18 of IC2 and either Pin 6 of the RJ45 or Pin 2 of TP5 on the solder side of the board.<br>
+- Connecting to TP5 is probably easier.<p>
+Rev B<br>
+07/2019<br>
+Add TVS diodes on power and serial lines.<p>
+
