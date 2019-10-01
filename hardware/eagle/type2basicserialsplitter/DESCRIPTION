@@ -1,0 +1,24 @@
+Basic Serial Splitter<br>
+Rev A 06/2019<p>
+Build master board with double RJ45 and all components to support up to 4 PCs<br>
+Build expansion board without RJ45, power components or MAX3233 to support up to 8 PCs<br>
+(Fit 8-way Female RA header to EXPAND position on master board, fit 8-way Male RA header to MASTER position on expansion board, then plug the two boards together)<br>
+Daisy chain 2 master boards together to support up to 16 PCs (requires Interface Rev D+).<br>
+Enable not more than one PC in total to transmit to the Interface with the DIP switch (or hard wire it with a link)<bR>
+Note: You still need a Power Board, but the DB9 on it is not used.<p>
+Expander:<br>
+Omit: IC1, IC2, C1-C7, D1, D2, RJ45, SW1<br>
+Fit: IC2, C8-C12, PC5-8<br>
+Optional: R1, LED1 (fit to one board only)<p>
+
+Rev B<br>
+07/2019<br>
+Add TVS diodes, change to TO220 regulator, extend board<br>
+Expander:<br>
+Omit: IC1, IC2, C1-C7, D1-D6, RJ45, SW1<br>
+Fit: IC2, C8-C12, PC5-8, RA Master Header Pins<br>
+Optional: R1, LED1 (fit to one board only)<p>
+
+Rev C<br>
+08/2019<br>
+Mods to auto-disable transmitter on a daisy chained board, using pin8 of the RJ45
