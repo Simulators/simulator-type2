@@ -1,8 +1,9 @@
 /*
-Simulator Interface v3.3 Beta
+Liverpool Ringing Simulator Project
+Simulator Interface v3.5 Beta
 Debug Functions
 
-Copyright 2014-2018 Andrew J Instone-Cowie.
+Copyright 2014-2019 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -119,3 +120,62 @@ void printDebugFlagsSet( void ) {
 		}
 	}
 }
+
+
+/*
+*********************************************************************************************
+*                                  Function runTestMode()                                   *
+*********************************************************************************************
+*/
+
+// Generate the selected test pattern, forever.
+// This loop runs as tightly as possible, to generate the best possible test pattern, and
+// therefore doesn't run arounf loop(). As a result the CLI cannot be used to cancel test mode.
+
+void runTestMode( int mode ) {
+	
+	// loop counters
+	int j, k;
+	
+	switch ( mode ) {
+		
+	case 1: // Rounds 
+		digitalWrite( LED, HIGH);
+		//ring rounds forever
+		while(true) {
+			// twice - handstroke and backstroke
+			for ( j = 0; j < 2; j++ ) {
+				for ( k = 0; k < testBells; k++ ) {
+					Serial.print( defaultBellStrikeChar[k] );
+					delay(testInterval);
+				}
+			}
+			// open handstroke lead
+			delay(testInterval);
+			// flash LED slowly
+			digitalWrite( LED, !digitalRead( LED ));
+
+		}
+		break;
+
+	case 2: // Firing
+		digitalWrite( LED, HIGH);
+		//ring the test pattern forever
+		while(true) {
+			for ( j = 0; j < testBells; j++ ) {
+				Serial.print( defaultBellStrikeChar[j] );
+			}
+			delay( testInterval * testBells );
+			// flash LED slowly
+			digitalWrite( LED, !digitalRead( LED ));
+		} //while true
+		break;
+	}
+}
+
+
+
+
+
+
+

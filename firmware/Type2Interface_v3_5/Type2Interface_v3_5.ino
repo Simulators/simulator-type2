@@ -1,7 +1,8 @@
 /*
-Simulator Interface v3.3 Beta
+Liverpool Ringing Simulator Project
+Simulator Interface v3.5 Beta
 
-Copyright 2014-2018 Andrew J Instone-Cowie.
+Copyright 2014-2019 Andrew J Instone-Cowie.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -32,6 +33,8 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 		  First GitHub release in simulator-type2 repo.
 	3.3 : Simplify CLI. Remove requirement to set numChannels and save it to EEPROM,
 		  by deriving the value from enabledChannelMask in getNumChannels.
+	3.4 : Test mode selection, additional test mode ("firing")
+	3.5 : Fix a very old bug in WAIT_FOR_DEBOUNCE.
 
 */
 
@@ -115,7 +118,7 @@ VTSerial vtSerial;
 
 // Software version
 const int majorVersion = 3;
-const int minorVersion = 3;
+const int minorVersion = 5;
 
 // -------------------------------------------------------------------------------------------
 //                                    Core Simulator
@@ -300,11 +303,17 @@ int pulseTimeCount[maxNumChannels]; //initialise in setup, and set to zero
 const int testStartDelay = 20; //seconds
 
 // Define the number of bells used in test mode
-const int testBells = 12;
+const int testBells = 16;
 
 // Define the inter-bell interval used in test mode. 200ms equates to a 12-bell peal speed
 // of 3h30m with an open handstroke lead.
 const int testInterval = 200; //msec
+
+// Define the test mode:
+// Mode 0 = Bail out of the T menu item in the CLI
+// Mode 1 = Rounds on testBells @testInterval ms
+// Mode 2 = "Firing" at approx the same speed, all characters sent as quickly as possible
+int testMode = 0;
 
 // -------------------------------------------------------------------------------------------
 //                                     LEDs & Timing
@@ -543,7 +552,8 @@ void loop() {
 						
 			// Read the value from the sensor pin
 			channelSensorValue = digitalRead( channelSensorPin[i] );
-						
+
+				
 			if ( channelSensorValue == HIGH ) {
 				
 				// Input has gone high again, pulse was too short, so this is a misfire.
@@ -553,6 +563,14 @@ void loop() {
 				
 				// Set the machine state back to "WAIT_FOR_INPUT"
 				channelMachineState[i] = WAIT_FOR_INPUT;
+				
+				// Bug fixed in 3.5: Set the last observed value to the current state of the
+				// sensor, which is now HIGH again. If we don't do this, and the noise pulse
+				// is so close to the stable pulse that the stable pulse begins on the very
+				// next iteration of loop(), then the real pulse would be missed (because
+				// WAIT_FOR_INPUT is looking for a high-to-low transition). This has only
+				// been seen with a VERY noisy mechanical switch sensor. 
+				channelLastValue[i] = channelSensorValue;
 				
 				// If we are in a debug mode, report the misfire and pulse data.
 				if ( debugThisChannel( i ) && isDebugFlagSet( DEBUG_SHOW_MISFIRES ) ) {
@@ -728,26 +746,11 @@ void loop() {
 			// Test mode works like this. The "T" CLI command puts all the channels into TEST_MODE
 			// and waits for testStartDelay seconds. For all channels other than 0, test mode does
 			// nothing and the code skips past. For channel 0, the first time we fall into the
-			// function below, the interface start to generate rounds at the defined pace.
-			// There is then no escape other than an interface reset.
+			// function below, the interface start to the test pattern at the defined pace.
+			// The function never returns, and there is no escape other than an interface reset.
 			
 			if( i == 0 ) {
-				digitalWrite( LED, HIGH);
-				//ring rounds forever
-				while(true) {
-					// twice - handstroke and backstroke
-					for ( j = 0; j < 2; j++ ) {
-						for ( k = 0; k < testBells; k++ ) {
-							Serial.print( defaultBellStrikeChar[k] );
-							delay(testInterval);
-						}
-					}
-					// open handstroke lead
-					delay(testInterval);
-					// flash LED slowly
-					digitalWrite( LED, !digitalRead( LED ));
-
-				}
+				runTestMode( testMode );
 			} // no else, only do this for channel 0
 			
 			break; //channelMachineState == TEST_MODE
@@ -787,7 +790,8 @@ void loop() {
 
 void serialEvent() {
 
-	/*  
+
+/*  
 
 We have to handle the CLI for the simulator interface.
 

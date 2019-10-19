@@ -1,8 +1,9 @@
 /*
-Simulator Interface v3.3 Beta
+Liverpool Ringing Simulator Project
+Simulator Interface v3.5 Beta
 Serial CLI Functions
 
-Copyright 2014-2018 Andrew J Instone-Cowie.
+Copyright 2014-2019 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +36,7 @@ void dumpData( void ) {
 	
 	// What version of software are we running?
 	termSetFor( TERM_HEADING );
-	Serial.print(F("Software Version: "));
+	Serial.print(F("Simulator Interface Version: "));
 	Serial.print( majorVersion );
 	Serial.print(F("."));
 	Serial.println( minorVersion );
@@ -434,17 +435,32 @@ void handleCLI( byte commandByte ) {
 		break;
 		
 	case 'T':    // T  = Test Mode
+	case 't':
 		Serial.println( char( commandByte ) );
-		termSetFor( TERM_CONFIRM );
-		Serial.print(F("Test Mode in "));
-		Serial.print(testStartDelay);
-		Serial.print(F(" seconds..."));
-		termSetFor( TERM_DEFAULT );
-		digitalWrite( LED, HIGH);
-		delay(testStartDelay * 1000); //testStartDelay is in seconds.
-		// put all the channels into test mode
-		for ( i = 0; i < maxNumChannels; i++ ) {
-			channelMachineState[i] = TEST_MODE;
+		readval = 9; // Set the value to be read deliberately out of range. (0 is valid value)
+		do {
+			termSetFor( TERM_INPUT );
+			Serial.print(F(" -> TM? [0/1/2]: "));
+			termSetFor( TERM_DEFAULT );
+			readval = vtSerial.ReadLong();       // read integer
+			Serial.println("");
+		} while ( readval < 0 || readval > 2 );
+		if( readval != 0 ) {
+			// 0 = bail out
+			testMode = readval;
+			termSetFor( TERM_CONFIRM );
+			Serial.print(F("Test Mode "));
+			Serial.print(testMode);
+			Serial.print(F(" in "));
+			Serial.print(testStartDelay);
+			Serial.print(F(" seconds..."));
+			termSetFor( TERM_DEFAULT );
+			digitalWrite( LED, HIGH);
+			delay( testStartDelay * 1000 ); //testStartDelay is in seconds.
+			// put all the channels into test mode
+			for ( i = 0; i < maxNumChannels; i++ ) {
+				channelMachineState[i] = TEST_MODE;
+			}
 		}
 		break; 
 

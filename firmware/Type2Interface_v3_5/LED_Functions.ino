@@ -1,8 +1,9 @@
 /*
-Simulator Interface v3.3 Beta
+Liverpool Ringing Simulator Project
+Simulator Interface v3.5 Beta
 Signal LED Functions
 
-Copyright 2014-2018 Andrew J Instone-Cowie.
+Copyright 2014-2019 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
