@@ -1,4 +1,4 @@
-# The TYpe 2 Liverpool Ringing Simulator
+# The Type 2 Liverpool Ringing Simulator
 
 In this repository you will find all the resources for building the Liverpool Ringing Simulator Project's Type 2 simulator interfaces and sensor heads, including:
 * Hardware & Software Manuals
