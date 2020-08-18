@@ -1,0 +1,11 @@
+
+ASCII 1 = 00110001 (MSB -> LSB)
+Start Bit is a 0
+Stop bit is a 1
+LSB is transmitted first
+RS-232 0 is high, 1 is low
+
+So bit stream is 0100011001 (ten bits, start, reversed ASCII 1, stop))
+Bit width is 1/2400 = 0.42ms
+Total width of byte = 4.2ms
+Stop bit is not visible
