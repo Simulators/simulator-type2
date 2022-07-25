@@ -1,9 +1,9 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.5 Beta
+Simulator Interface v3.6
 EEPROM Functions
 
-Copyright 2014-2019 Andrew J Instone-Cowie.
+Copyright 2014-2022 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -178,7 +178,7 @@ void loadFromEEPROM( void )
 		// from the high and low bytes.
 		enabledChannelMask = word( EEPROM.read( EEPROM_ENABLE_MASK_HI ), EEPROM.read( EEPROM_ENABLE_MASK_LO ) );
 		debugChannelMask = word( EEPROM.read( EEPROM_DEBUG_MASK_HI ), EEPROM.read( EEPROM_DEBUG_MASK_LO ) ); //hi, lo
-		// if all the sensors are disabled, set it to the default.
+		// if all the sensors are disabled, set it to the default mask (all enabled).
 		if( enabledChannelMask == 0 ) {
 			enabledChannelMask = defaultMask;
 		}

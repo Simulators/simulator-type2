@@ -1,9 +1,9 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.5 Beta
+Simulator Interface v3.6
 Serial CLI Functions
 
-Copyright 2014-2019 Andrew J Instone-Cowie.
+Copyright 2014-2022 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -253,7 +253,7 @@ void handleCLI( byte commandByte ) {
 			// Toggle the channel bit in the enable mask by XOR-ing the current value with 1
 			// (remembering that channel numbers are 1-16, bits/channels are 0-15). Max 16 bits.
 			toggleMaskBit( &enabledChannelMask, readval - 1, maxNumChannels );
-			// Disabling ALL the sensors would be silly... so prevent it
+			// Disabling ALL the sensors would be silly and cause an endless loop... so prevent it
 			if( enabledChannelMask == 0 ) {
 				termSetFor( TERM_DEBUG );
 				Serial.println(F("Cannot disable ALL the sensors!"));
@@ -440,7 +440,7 @@ void handleCLI( byte commandByte ) {
 		readval = 9; // Set the value to be read deliberately out of range. (0 is valid value)
 		do {
 			termSetFor( TERM_INPUT );
-			Serial.print(F(" -> TM? [0/1/2]: "));
+			Serial.print(F(" -> Start test mode? (0=Done/1=Rounds/2=Firing) [0/1/2]: "));
 			termSetFor( TERM_DEFAULT );
 			readval = vtSerial.ReadLong();       // read integer
 			Serial.println("");
@@ -448,16 +448,7 @@ void handleCLI( byte commandByte ) {
 		if( readval != 0 ) {
 			// 0 = bail out
 			testMode = readval;
-			termSetFor( TERM_CONFIRM );
-			Serial.print(F("Test Mode "));
-			Serial.print(testMode);
-			Serial.print(F(" in "));
-			Serial.print(testStartDelay);
-			Serial.print(F(" seconds..."));
-			termSetFor( TERM_DEFAULT );
-			digitalWrite( LED, HIGH);
-			delay( testStartDelay * 1000 ); //testStartDelay is in seconds.
-			// put all the channels into test mode
+			// put ALL the channels into test mode
 			for ( i = 0; i < maxNumChannels; i++ ) {
 				channelMachineState[i] = TEST_MODE;
 			}

@@ -1,8 +1,8 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.5 Beta
+Simulator Interface v3.6
 
-Copyright 2014-2019 Andrew J Instone-Cowie.
+Copyright 2014-2022 Andrew J Instone-Cowie.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +35,10 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 		  by deriving the value from enabledChannelMask in getNumChannels.
 	3.4 : Test mode selection, additional test mode ("firing")
 	3.5 : Fix a very old bug in WAIT_FOR_DEBOUNCE.
-
+	3.6 : Test Mode uses the calculated numChannels from enabledChannelMask
+		  Fix Test Mode startup menu crunch
+		  Improve Test Mode CLI
+		  
 */
 
 /*
@@ -118,7 +121,7 @@ VTSerial vtSerial;
 
 // Software version
 const int majorVersion = 3;
-const int minorVersion = 5;
+const int minorVersion = 6;
 
 // -------------------------------------------------------------------------------------------
 //                                    Core Simulator
@@ -302,8 +305,9 @@ int pulseTimeCount[maxNumChannels]; //initialise in setup, and set to zero
 // Define the delay before test mode kicks in after selecting the "T" CLI option
 const int testStartDelay = 20; //seconds
 
-// Define the number of bells used in test mode
-const int testBells = 16;
+// The number of bells used in test mode (and elsewhere) is calculated as numChannels from the
+// highest channel enabled in the enabledChannelMask, so by setting this (option E in the CLI),
+// the number of test mode bells can be set.
 
 // Define the inter-bell interval used in test mode. 200ms equates to a 12-bell peal speed
 // of 3h30m with an open handstroke lead.
@@ -808,6 +812,9 @@ The MBI protocol defines two distinct commands, plus the timers:
 0xFE = Send timer values, correct response is to send 12 bytes of timer values terminated 
 		with 0xFF
 0xNN = Anything else is the first of 12 bytes of hex timer values, terminated with 0xFF
+
+The serialEvent() built-in function is not really event driven: It relies on loop(), so
+does not get called when code is doing other things (like running the TEST_MODE loop).
 
 */
 

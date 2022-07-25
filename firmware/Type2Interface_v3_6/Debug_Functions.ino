@@ -1,9 +1,9 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.5 Beta
+Simulator Interface v3.6
 Debug Functions
 
-Copyright 2014-2019 Andrew J Instone-Cowie.
+Copyright 2014-2022 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -130,9 +130,39 @@ void printDebugFlagsSet( void ) {
 
 // Generate the selected test pattern, forever.
 // This loop runs as tightly as possible, to generate the best possible test pattern, and
-// therefore doesn't run arounf loop(). As a result the CLI cannot be used to cancel test mode.
+// therefore doesn't run around loop(). As a result the CLI cannot be used to cancel test mode.
+// Test mode uses numChannels, which is calculated from the highest channel enabled in the
+// enabledChannelMask, so by setting this (option E in the CLI), the number of test mode bells
+// can be set.
 
 void runTestMode( int mode ) {
+	
+	// This section runs only once when channel 1 enters TEST_MODE state.
+	// After this, the test ringing runs in an infinite loop.
+	
+	termSetFor( TERM_CONFIRM );
+	Serial.println("");
+	Serial.print(F("Test Mode "));
+	Serial.print(testMode);
+	
+	switch ( mode ) {
+		
+	case 1: // Rounds 
+		Serial.print(F(" (Rounds on "));
+		break;
+
+	case 2: // Firing
+		Serial.print(F(" (Firing on "));
+		break;
+	}
+	
+	Serial.print(numChannels);
+	Serial.print(F(") in "));
+	Serial.print(testStartDelay);
+	Serial.print(F(" seconds..."));
+	termSetFor( TERM_DEFAULT );
+	digitalWrite( LED, HIGH);
+	delay( testStartDelay * 1000 ); //testStartDelay is in seconds.
 	
 	// loop counters
 	int j, k;
@@ -145,7 +175,7 @@ void runTestMode( int mode ) {
 		while(true) {
 			// twice - handstroke and backstroke
 			for ( j = 0; j < 2; j++ ) {
-				for ( k = 0; k < testBells; k++ ) {
+				for ( k = 0; k < numChannels; k++ ) {
 					Serial.print( defaultBellStrikeChar[k] );
 					delay(testInterval);
 				}
@@ -154,28 +184,20 @@ void runTestMode( int mode ) {
 			delay(testInterval);
 			// flash LED slowly
 			digitalWrite( LED, !digitalRead( LED ));
-
-		}
+		} //while true
 		break;
 
 	case 2: // Firing
 		digitalWrite( LED, HIGH);
 		//ring the test pattern forever
 		while(true) {
-			for ( j = 0; j < testBells; j++ ) {
+			for ( j = 0; j < numChannels; j++ ) {
 				Serial.print( defaultBellStrikeChar[j] );
 			}
-			delay( testInterval * testBells );
+			delay( testInterval * numChannels );
 			// flash LED slowly
 			digitalWrite( LED, !digitalRead( LED ));
 		} //while true
 		break;
 	}
 }
-
-
-
-
-
-
-
