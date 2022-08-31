@@ -7976,7 +7976,7 @@ Additional footprint on layer 51 tDocu showing outline of TSR-1-2450 switching r
 </symbols>
 <devicesets>
 <deviceset name="SA5.0A">
-<description>&lt;B&gt;SA5.0CA TVS&lt;B&gt;&lt;P&gt;
+<description>&lt;B&gt;SA5.0A TVS&lt;B&gt;&lt;P&gt;
 
 Uni-Directional Transient Voltage Suppressor.
 5V, DO41 package</description>

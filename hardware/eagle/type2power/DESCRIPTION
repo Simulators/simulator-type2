@@ -8,3 +8,4 @@ Added polarity indication for barrel connector<p>
 Rev D<br>
 07/2019<br>
 Add TVS diodes on power and serial lines.<p>
+Panel 4 now has wider 5mm breakout tabs to suit revised JLPCB standards.

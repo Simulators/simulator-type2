@@ -5,7 +5,7 @@ Rev C 01/2018<br>
 Correct corner radii<br>
 Add 4-way & 6-board for Seeedstudio panelization at 100mm x 100mm.<br>
 Rev D 09/2018<br>
-Add 2SS52M lead forming guide 
+Add 2SS52M lead forming guide
 
 <pre>
 MR sensor package silk screen X = +0.1
@@ -28,5 +28,7 @@ Width of package = 0.2
 Hence silk screen guide lines
 X = -0.1 & X = +0.1
 Y = +0.288 & Y = +0.388
-This allows the edge of the board to be used as a guide for forming the VR legs 
+This allows the edge of the board to be used as a guide for forming the MR sensor legs
 </pre>
+
+Panel 6 now has wider 5mm breakout tabs to suit revised JLPCB standards.

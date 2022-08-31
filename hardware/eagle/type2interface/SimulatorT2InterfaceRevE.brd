@@ -138,9 +138,10 @@
 </layers>
 <board>
 <plain>
-<text x="17.272" y="10.287" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
+<text x="17.272" y="7.747" size="1.27" layer="21" font="vector" align="bottom-center">Liverpool Simulator Type 2
+www.simulators.org.uk
 Interface Board</text>
-<text x="19.6215" y="6.477" size="1.016" layer="21" font="vector" align="bottom-center">Rev E
+<text x="19.6215" y="3.937" size="1.016" layer="21" font="vector" align="bottom-center">Rev E
 05/2019</text>
 <rectangle x1="22.225" y1="41.91" x2="22.86" y2="42.545" layer="21"/>
 <rectangle x1="38.735" y1="5.715" x2="39.37" y2="6.35" layer="21"/>
@@ -171,6 +172,9 @@ Interface Board</text>
 Regultator
 Lead Forming
 Guide</text>
+<text x="66.04" y="40.64" size="1.27" layer="22" font="vector" rot="MR90" align="center">Connect this board to Liverpool Simulator
+Type 2 or compatible equipment ONLY.
+Refer to documentation for details.</text>
 </plain>
 <libraries>
 <library name="SparkFun-DigitalIC">
@@ -664,6 +668,14 @@ Additional footprint on layer 51 tDocu showing outline of TSR-1-2450 switching r
 <wire x1="-5.842" y1="-12.192" x2="-5.842" y2="-4.572" width="0.127" layer="51"/>
 <text x="0" y="-6.35" size="0.762" layer="51" font="vector" align="bottom-center">TSR-1-2450</text>
 </package>
+<package name="WARNING_TRIANGLE_TPLACE">
+<description>A warning triangle 0.2"x0.2" on layer 21 (tPlace)</description>
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.381" layer="21"/>
+<wire x1="2.54" y1="0" x2="0" y2="5.08" width="0.381" layer="21"/>
+<wire x1="0" y1="5.08" x2="-2.54" y2="0" width="0.381" layer="21"/>
+<wire x1="0" y1="1.905" x2="0" y2="3.175" width="0.381" layer="21"/>
+<wire x1="0" y1="1.016" x2="0" y2="1.27" width="0.381" layer="21"/>
+</package>
 </packages>
 </library>
 <library name="SparkFun-Aesthetics">
@@ -982,7 +994,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="34.4678" y="59.6138" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="43.18" y="65.5828" size="1.27" layer="27" font="vector" rot="R270" align="bottom-center"/>
 </element>
-<element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="13.97" y="7.62"/>
+<element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="13.97" y="5.08"/>
 <element name="D2" library="AIC_Custom" package="DO41_TVS_UNI" value="SA5.0A" x="58.42" y="72.39" smashed="yes">
 <attribute name="NAME" x="58.42" y="74.041" size="1.27" layer="25" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="58.928" y="69.596" size="1.27" layer="27" font="vector" align="bottom-center"/>
@@ -1032,6 +1044,7 @@ design rules under a new name.</description>
 <element name="Q1" library="murata-resonators" package="CSTLS_G8" value="CSTLS8M00G53-B0" x="35.56" y="29.21" smashed="yes" rot="R270">
 <attribute name="NAME" x="34.004" y="32.702" size="1.27" layer="25" font="vector" rot="R270" align="center-right"/>
 </element>
+<element name="U$1" library="AIC_Custom" package="WARNING_TRIANGLE_TPLACE" value="" x="63.5" y="13.97" rot="MR90"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1586,6 +1599,9 @@ design rules under a new name.</description>
 <wire x1="36.79" y1="30.48" x2="35.56" y2="31.71" width="0.1524" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="6,16,d70adae61494afe5"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
