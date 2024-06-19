@@ -1,8 +1,8 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.6
+Simulator Interface v3.7
 
-Copyright 2014-2022 Andrew J Instone-Cowie.
+Copyright 2014-2024 Andrew J Instone-Cowie.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
+Tested against Abel 10.3.2, Beltower 12.82 (2022), Virtual Belfry 3.10.
 
 	3.1 : Dedicated Type 2 (RJ45) Version
 	3.2 : Added remapping code (largely ex SplitterBox)
@@ -38,6 +38,7 @@ Tested against Abel 3.10.0, Beltower 12.35 (2017), Virtual Belfry 3.5.
 	3.6 : Test Mode uses the calculated numChannels from enabledChannelMask
 		  Fix Test Mode startup menu crunch
 		  Improve Test Mode CLI
+	3.7 : Add support for MBI protocol 0xFD command for Abel 10.3.2
 		  
 */
 
@@ -121,7 +122,7 @@ VTSerial vtSerial;
 
 // Software version
 const int majorVersion = 3;
-const int minorVersion = 6;
+const int minorVersion = 7;
 
 // -------------------------------------------------------------------------------------------
 //                                    Core Simulator
@@ -813,6 +814,10 @@ The MBI protocol defines two distinct commands, plus the timers:
 		with 0xFF
 0xNN = Anything else is the first of 12 bytes of hex timer values, terminated with 0xFF
 
+Note that Abel 10.3.2 introduced support for the MBI protocol 0xFD command to detect a
+simulator interface and do basic population of the External Bells dialogue box. The 0xFD
+command is therefore supported.
+
 The serialEvent() built-in function is not really event driven: It relies on loop(), so
 does not get called when code is doing other things (like running the TEST_MODE loop).
 
@@ -831,21 +836,23 @@ does not get called when code is doing other things (like running the TEST_MODE 
 
 		case 0xFD:    // FD = Are You There command?
 			inChar = (byte)Serial.read(); //debuffer the character
-			// No response is sent: we are not advertising MBI protocol support.
-			// blink the LED to indicate we got a command
+			Serial.write(0xFD);
+			// Disable debugging
+			debugMode = false;
+			// blink the LED to indicate we got a valid command
 			blinkLED( LED, 1, 1 );   
 			break;
-			
+						
 		case 0xFE:    // FE = Send Delay Values
 			inChar = (byte)Serial.read(); //debuffer the character
-			// Again no response is sent: we are not advertising MBI protocol support.
+			// No response is sent: we do not store delay values in the interface.
 			// blink the LED to indicate we got a command
 			blinkLED( LED, 1, 2 );   
 			break;
 
 		default:
 	/*
-	Even though we do not respond to MBI commands above, we may still be sent unsolicited
+	Even though we do not respond to MBI delay commands above, we may still be sent unsolicited
 	delay data for 12 bells. Abel in particular will send delay data blindly on startup if
 	interface-managed delay timers are configured. So, any non-command data must first be
 	assumed to be the delay timers, because the protocol does not include any leading command

@@ -1,9 +1,9 @@
 /*
 Liverpool Ringing Simulator Project
-Simulator Interface v3.6
+Simulator Interface v3.7
 Terminal Functions
 
-Copyright 2014-2022 Andrew J Instone-Cowie.
+Copyright 2014-2024 Andrew J Instone-Cowie.
 
 This is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
