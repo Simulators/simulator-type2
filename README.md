@@ -12,4 +12,4 @@ Please note that this is a Build-it-Yourself project. No pre-built hardware is a
 
 The original (Type 1) Liverpool Simulator hardware and code can be found in the legacy repository at https://github.com/Simulators/simulator. The Type 1 simulator is no longer under active development.
 
-If you didn't get here from http://www.simulators.org.uk/, you might want to go and look at that, too.
+If you didn't get here from https://www.simulators.org.uk/, you might want to go and look at that, too.
