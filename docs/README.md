@@ -1,7 +1,7 @@
 # The Liverpool Ringing Simulator Project
 ## PDF Documentation
 
-* [00 - Type 2 RELEASE NOTES v1.0](https://simulators.github.io/simulator-type2/docs/00 - Type 2 RELEASE NOTES v1.0.pdf)
+* [00 - Type 2 RELEASE NOTES v1.0](./00 - Type 2 RELEASE NOTES v1.0.pdf)
 
 * [01 - Type 2 Getting Started Guide v1.4](https://simulators.github.io/simulator-type2/docs/01 - Type 2 Getting Started Guide v1.4.pdf)
 
@@ -25,3 +25,4 @@
 
 * [A Virtual Striking Competition v1.0](https://simulators.github.io/simulator-type2/docs/A Virtual Striking Competition v1.0.pdf)
 
+For all project files, go to the main [GitHub Repository](https://github.com/Simulators/simulator-type2)
