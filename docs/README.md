@@ -26,4 +26,6 @@
 
 * [A Virtual Striking Competition v1.0](./A Virtual Striking Competition v1.0.pdf)
 
+* [Type 2 Cost Estimation Tool v1.5](./Type 2 Cost Estimation Tool v1.5.xlsx)
+
 For all project files, go to the main [GitHub Repository](https://github.com/Simulators/simulator-type2)
