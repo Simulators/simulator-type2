@@ -1,6 +1,6 @@
 # The Liverpool Ringing Simulator Project
 
-## PDF Documentation Index
+## Type 2 PDF Documentation Index
 
 * [00 - Type 2 RELEASE NOTES v1.0](./00 - Type 2 RELEASE NOTES v1.0.pdf)
 
@@ -28,4 +28,4 @@
 
 * [Type 2 Cost Estimation Tool v1.5](./Type 2 Cost Estimation Tool v1.5.xlsx)
 
-For all project files, go to the main [GitHub Repository](https://github.com/Simulators/simulator-type2)
+For all other project files, go to the main [GitHub Repository](https://github.com/Simulators/simulator-type2)
