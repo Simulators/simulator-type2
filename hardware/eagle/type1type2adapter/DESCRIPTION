@@ -1,0 +1,17 @@
+Simulator Type 1 - Type 2 Interface Adapter<br>
+Rev B 02/2025<p>
+
+Allows Type 2 sensors to be connected to a Type 1 interface, or vice-versa.<br>
+For Type 1 connector pinouts & cabling, refer to Type 1 Interface Hardware Guide.<br>
+For Type 2 connector pinout & cabling, refer to Type 2 Technical Reference Guide.<p>
+
+Use Molex KK 254 style 4-pin right-angle connectors (or a similar wire-to-board connector) to terminate the Type 1 cables, wiring pins 1-3 (and optionally pin 4 for two sensors), to a GX-16 4-pin plug, as indicated.<br>
+Connect the GX-16 plug to the Type 1 interface, noting that the interface will need to be wired to support double-headed sensors if you wish to connect 2 sensors per cable, as optionally described in the Type 1 documentation.<br>
+Each Type 1 cable can support a maximum of two sensors.<br>
+
+Use a regular Type 2 network cable for the Type 2 sensors.<br>
+The Type 2 port supports the usual maximum of 4 sensors in a chain, but to support all 4 both Type 1 connectors must be cabled up fully.<p>
+
+This adapter can also be used to connect a Type 1 sensor to a Type 2 interface.<br>
+Refer to the documentation for cabling details.
+
