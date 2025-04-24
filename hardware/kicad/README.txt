@@ -1,5 +1,5 @@
-HOW TO USE THESE KICAD CAD FILES
-================================
+HOW TO USE THE KICAD CAD FILES
+==============================
 
 *** If you just want to order PCBs from a fabrication house, you don't need THESE files ***
 Ready-made Gerber files can be found in the Gerbers directory.
@@ -10,6 +10,8 @@ The version of KiCad currently used for Liverpool Ringing Simulator Project PCB 
 
 Libraries
 =========
+
+As far as possible, the PCB designs use symbols and footprints from the stock libraries supplied with KiCad. Where no suitable symbol or footprint exists in the stock libraries, additional symbols and footprints are provided by custom libraries in this repository.
 
 Unpack the libraries zipfile into a convenient location, wherever you keep your custom KiCad libraries, and start KiCad 9.x.
 
@@ -47,4 +49,4 @@ KiKit panelisation parameter files are provided in the PCB project zipfiles. The
 Note that KiKit panelisation is intended to be run from the Standalone PCB Editor, not from within a project.
 
 LRSP
-20250422
+20250424
