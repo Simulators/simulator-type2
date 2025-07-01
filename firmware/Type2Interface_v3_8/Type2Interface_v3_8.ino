@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Tested against Abel 10.3.2, Beltower 14.04 (2025), Virtual Belfry 3.10.
+Tested against Abel 10.3.2, Beltower 14.05 (2025), Virtual Belfry 3.10.
 
 	3.1 : Dedicated Type 2 (RJ45) Version
 	3.2 : Added remapping code (largely ex SplitterBox)
@@ -41,6 +41,7 @@ Tested against Abel 10.3.2, Beltower 14.04 (2025), Virtual Belfry 3.10.
 	3.7 : Add support for MBI protocol 0xFD command for Abel 10.3.2
 	3.8 : Add swing delta timing as an additional debug option
 		  Change debug message format to have identifying letter first
+		  Beltower 14.05
 		  
 */
 
