@@ -19,29 +19,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Tested against Abel 10.3.2, Beltower 14.05 (2025), Virtual Belfry 3.10.
 
-	3.1 : Dedicated Type 2 (RJ45) Version
-	3.2 : Added remapping code (largely ex SplitterBox)
-		  Added CLI option Z to load default settings
-		  CLI detection of unsaved EEPROM settings
-		  Remove quirks mode (Option Q) & associated code
-		  Change default debounce timer to 2ms
-		  Disambiguate channels from bells throughout CLI
-		  Make CLI non case sensitive (apart from Options D/d & T)
-		  Improve CLI formatting, really disable disabled channels
-		  Abel 3.10.0, Virtual Belfry 3.5
-		  Measure debounce timer in microseconds to improve consistency
+	3.1 : Dedicated Type 2 (RJ45) Version.
+	3.2 : Added remapping code (largely ex SplitterBox).
+		  Added CLI option Z to load default settings.
+		  CLI detection of unsaved EEPROM settings.
+		  Remove quirks mode (Option Q) & associated code.
+		  Change default debounce timer to 2ms.
+		  Disambiguate channels from bells throughout CLI.
+		  Make CLI non case sensitive (apart from Options D/d & T).
+		  Improve CLI formatting, really disable disabled channels.
+		  Abel 3.10.0, Virtual Belfry 3.5.
+		  Measure debounce timer in microseconds to improve consistency.
 		  First GitHub release in simulator-type2 repo.
 	3.3 : Simplify CLI. Remove requirement to set numChannels and save it to EEPROM,
 		  by deriving the value from enabledChannelMask in getNumChannels.
-	3.4 : Test mode selection, additional test mode ("firing")
+	3.4 : Test mode selection, additional test mode ("firing").
 	3.5 : Fix a very old bug in WAIT_FOR_DEBOUNCE.
-	3.6 : Test Mode uses the calculated numChannels from enabledChannelMask
-		  Fix Test Mode startup menu crunch
-		  Improve Test Mode CLI
-	3.7 : Add support for MBI protocol 0xFD command for Abel 10.3.2
-	3.8 : Add swing delta timing as an additional debug option
-		  Change debug message format to have identifying letter first
-		  Beltower 14.05
+	3.6 : Test Mode uses the calculated numChannels from enabledChannelMask.
+		  Fix Test Mode startup menu crunch.
+		  Improve Test Mode CLI.
+	3.7 : Add support for MBI protocol 0xFD command for Abel 10.3.2.
+	3.8 : Add swing delta timing as an additional debug option.
+		  Change debug message format to have identifying letter first.
+		  Add time since last pulse to pulse timer (S) debug message.
+		  Tested against Beltower 14.05.
 		  
 */
 
@@ -619,9 +620,9 @@ void loop() {
 					Serial.print(F(" "));
 					Serial.print( bellStrikeChar[i] );
 					Serial.print(F(" "));
-					Serial.print( channelDebounceEndTime[i] );
+					Serial.print( channelDebounceEndTime[i] ); //microseconds
 					Serial.print(F(" "));
-					Serial.println( pulseEndTime[i] - pulseStartTime[i] );
+					Serial.println( pulseEndTime[i] - pulseStartTime[i] ); //microseconds
 					
 					// There is no need to set the pulse counter here - misfires are by
 					// definition pulse #1 of 1. There may however be noise pulses *after*
@@ -659,7 +660,7 @@ void loop() {
 						Serial.print(F(" "));
 						Serial.print( bellStrikeChar[i]);
 						Serial.print(F(" "));
-						Serial.println( channelDebounceEndTime[i] );
+						Serial.println( channelDebounceEndTime[i] ); //microseconds
 						
 					} //debugFlagSet
 				
@@ -760,11 +761,13 @@ void loop() {
 						Serial.print(F(" "));
 						Serial.print( bellStrikeChar[i] );
 						Serial.print(F(" "));
-						Serial.print( channelGuardEndTime[i] );
+						Serial.print( channelGuardEndTime[i] ); //milliseconds
 						Serial.print(F(" "));
-						Serial.print( pulseEndTime[i] - pulseStartTime[i] );
+						Serial.print( pulseEndTime[i] - pulseStartTime[i] ); //microseconds
 						Serial.print(F(" "));
-						Serial.println(pulseTimeCount[i]);
+						Serial.print( pulseTimeCount[i] );
+						Serial.print(F(" "));
+						Serial.println( ( pulseStartTime[i] - lastPulseStartTime[i] ) / 1000 ); //milliseconds
 						
 						// Reset the pulse counter, as we are going back to WAIT_FOR_INPUT
 						pulseTimeCount[i] = 0;
