@@ -6,20 +6,20 @@ Ready-made Gerber files can be found in the Gerbers directory.
 
 A working knowledge of KiCad is assumed.
 
-The version of KiCad currently used for Liverpool Ringing Simulator Project PCB development is 9.0.1.
+The version of KiCad currently used for Liverpool Ringing Simulator Project PCB development is 10.0.x. Some KiCad projects were developed with KiCad 9.0.x, and may require updates if opened in KiCad 10.0.x. 
 
 Libraries
 =========
 
 As far as possible, the PCB designs use symbols and footprints from the stock libraries supplied with KiCad. Where no suitable symbol or footprint exists in the stock libraries, additional symbols and footprints are provided by custom libraries in this repository.
 
-Unpack the libraries zipfile into a convenient location, wherever you keep your custom KiCad libraries, and start KiCad 9.x.
+Unpack the libraries zipfile into a convenient location, wherever you keep your custom KiCad libraries, and start KiCad 10.x. Note that some libraries now require KiCad 10.0x.
 
 From the project browser window, use the "Preferences | Manage Symbol Libraries..." menu option to register the symbol library file "LRSP_Simulator.kicad_sym" as a Global symbol library with the nickname "LRSP_Simulator".
 
 From the project browser window, use the "Preferences | Manage Footprint Libraries..." menu option to register the footprint library directory "LRSP_Simulator.pretty" as a Global footprint library with the nickname "LRSP_Simulator".
 
-The footprint library uses the KiCad 9.x embedded file functionality to embed 3D models into the library. There is no need for a separate 3D models collection.
+The footprint library uses the KiCad 9.x (and later) embedded file functionality to embed 3D models into the library. There is no need for a separate 3D models collection.
 
 PCB Projects
 ============
@@ -49,4 +49,4 @@ KiKit panelisation parameter files are provided in the PCB project zipfiles. The
 Note that KiKit panelisation is intended to be run from the Standalone PCB Editor, not from within a project.
 
 LRSP
-20250424
+20261009
